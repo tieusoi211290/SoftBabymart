@@ -1,0 +1,141 @@
+﻿<script src="~/Scripts/module/DM/groupCustomer_Product.js"></script>
+<script>
+    var product_GroupCustomer = new GroupCustomer_Product.mvGroupCustomer_Product();
+    product_GroupCustomer.Start();
+</script>
+
+<div id="Group_customer_productViewId">
+    <p class="button-height inline-label">
+        <span class="label">Nhóm sản phẩm</span>
+        <span class="button-group margin-top">
+            <!--ko foreach:product_GroupCustomer.listGroupProduct-->
+            <!--ko if:$data.countPrd >0 -->
+            <label data-bind="attr: { for:'button-checkbox-'+Id}" class="button green-active">
+                <input type="checkbox" data-bind="checkedValue: Id,checked: product_GroupCustomer.chosenGroupProduct,attr: {value:Id,name:'button-checkbox-'+Id,id:'button-checkbox-'+Id}">
+                <!--ko text:tenloai-->
+                <!--/ko-->
+            </label>
+            <!--/ko-->
+            <!--/ko-->
+        </span>
+
+    </p>
+    <p class="button-height inline-label">
+        <span class="label">Nhà phân phối</span>
+        <span class="button-group margin-top">
+            <!--ko foreach:product_GroupCustomer.listTableNPP-->
+            <label data-bind="attr: { for:'button-checkbox-NPP-'+Id}" class="button green-active">
+                <input type="checkbox" data-bind="checkedValue: Id,checked: product_GroupCustomer.chosenGroupNPP,attr: {value:Id,name:'button-checkbox-NPP-'+Id,id:'button-checkbox-NPP-'+Id}">
+                <!--ko text:TenNPP-->
+                <!--/ko-->
+            </label>
+            <!--/ko-->
+        </span>
+
+    </p>
+    <!--ko if: product_GroupCustomer.listTable().length>0 -->
+    <fieldset class="fieldset">
+        <span class="button-group">
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-download">Xuất</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-outbox">Nhập</a>
+        </span>
+        <div class="table-responsive dataTable_product_groupCustommer">
+            <table class="table table-bordered table-advance table-hover" id="DataTable_product"
+                   data-bind="dataTable: {
+                              dataSource: product_GroupCustomer.listTable,
+                              rowTemplate: 'readonlyTmp_product',
+                              gridId: 'AssetGrid_product',
+                              deferRender: true,
+                              columns:
+                                  [
+                                      {'name':'masp' },
+                                      {'name':'tensp' },
+                                      {'name':'soft_GiaTC' },
+                                      {'name':'soft_GiaM' },
+                                      {'name':'BanleCH' },
+                                      {'name':'Online' },
+                                      {'name':'Si' },
+                                      {'name':'Lazada' },
+                                      {'name':'Mymall' },
+                                      {'name':'Shopee' },
+                                      {'name':'Date_Onl' },
+                                      {'name':'Chietkhau_Onl' },
+                                      {'name':'Date_CH' },
+                                      {'name':'Chietkhau_CH' }
+                                  ]
+                            }">
+                <thead>
+                    <tr>
+                        <th>Mã</th>
+                        <th>Sản phẩm</th>
+                        <th>Giá tham chiếu</th>
+                        <th>Giá mua</th>
+                        <th>Bán lẻ cửa hàng</th>
+                        <th>Online</th>
+                        <th>Bán sỉ</th>
+                        <th>Lazada</th>
+                        <th>Mymall</th>
+                        <th>Shopee</th>
+                        <th>Chiết khấu CH</th>
+                        <th>Ngày áp dụng CH</th>
+                        <th>Chiết khấu Online</th>
+                        <th>Ngày áp dụng Online</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </fieldset>
+    <script type="text/html" id="readonlyTmp_product">
+        <!--ko template: { name:  $data.currentTemp(),data: $data.currentTempData() } -->
+        <!--/ko-->
+    </script>
+    <script type="text/html" id="readonlyTemplate_product_groupCustommer">
+        <td><span data-bind="text: masp"></span></td>
+        <td><span data-bind="text: tensp"></span></td>
+        <td><span data-bind="textMoney: soft_GiaTC"></span></td>
+        <td><span data-bind="textMoney: soft_GiaM"></span></td>
+        <td><span data-bind="textMoney: BanleCH"></span></td>
+        <td><span data-bind="textMoney: Online"></span></td>
+        <td><span data-bind="textMoney: Si"></span></td>
+        <td><span data-bind="textMoney: Lazada"></span></td>
+        <td><span data-bind="textMoney: Shopee"></span></td>
+        <td><span data-bind="textMoney: Mymall"></span></td>
+        <td><span data-bind="text: Chietkhau_CH"></span></td>
+        <td><span data-bind="dateshort: Date_CH"></span></td>
+        <td><span data-bind="text: Chietkhau_Onl"></span></td>
+        <td><span data-bind="text: Date_Onl"></span></td>
+        <td>
+            <input type="button" class="button compact icon-gear" value="Edit" data-bind="click: product_GroupCustomer.editTemplateBind" />
+        </td>
+    </script>
+    <script type="text/html" id="editTemplate_product_groupCustommer">
+        <td><span data-bind="text: masp"></span></td>
+        <td><span data-bind="text: tensp"></span></td>
+        <td><span data-bind="textMoney: soft_GiaTC"></span></td>
+        <td><span data-bind="textMoney: soft_GiaM"></span></td>
+        <td><input type="text" data-bind="value: BanleCH" class="input" /></td>
+        <td><input type="text" data-bind="value: Online" class="input" /></td>
+        <td><input type="text" data-bind="value: Si" class="input" /></td>
+        <td><input type="text" data-bind="value: Lazada" class="input" /></td>
+        <td><input type="text" data-bind="value: Shopee" class="input" /></td>
+        <td><input type="text" data-bind="value: Mymall" class="input" /></td>
+        <td><input type="text" data-bind="value: Chietkhau_CH" class="input" /></td>
+        <td>
+            <input type="text" readonly="readonly" data-bind="datepicker: Date_CH" class="input datepicker" data-date-format="dd-mm-yyyy" />
+        </td>
+        <td><input type="text" data-bind="value: Chietkhau_Onl" class="input" /></td>
+        <td>
+            <input type="text" readonly="readonly" data-bind="datepicker: Date_Onl" class="input datepicker" data-date-format="dd-mm-yyyy" />
+        </td>
+        <td class="low-padding align-center">
+            <input type="button" class="button compact icon-gear" value="Save" data-bind="click: product_GroupCustomer.save" />
+            <input type="button" class="button compact icon-gear" value="Cancel" data-bind="click:product_GroupCustomer.reset" />
+        </td>
+    </script>
+    <!--/ko-->
+    <div class="pageloading">
+        <span class="loader huge"></span>
+    </div>
+</div>

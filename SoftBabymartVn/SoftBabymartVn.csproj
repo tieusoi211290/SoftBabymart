@@ -1,0 +1,1388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DBB41704-705D-4F5A-BEF2-C2F1C435F85A}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoftBabymartVn</RootNamespace>
+    <AssemblyName>SoftBabymartVn</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.30506.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.30506.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\App_Start.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\css\bootstrap-timepicker.min.css" />
+    <Content Include="Content\css\custom.css" />
+    <Compile Include="Controllers\DvtController.cs" />
+    <Compile Include="Controllers\GroupCustomerController.cs" />
+    <Compile Include="Controllers\GroupCustomer_ProductController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\GroupProductController.cs" />
+    <Compile Include="Controllers\KHOController.cs" />
+    <Compile Include="Controllers\NPPController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\WarehouseController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infractstructure\CRUD.cs" />
+    <Compile Include="Infractstructure\Mappers.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\admin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\admin_role.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cart.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\donhang.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\donhang_chuyenphat_tinh.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\donhang_chuyenphat_tp.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\donhang_chuyenphat_tp_tinhtra.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\donhang_chuyenphat_vung.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\donhang_ct.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\donhang_gio_giaohang.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\khachhang.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\khachhang_lienhe.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\khachhang_vanglai.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Module\GroupCustomerProductModel.cs" />
+    <Compile Include="Models\Module\GroupProductModel.cs" />
+    <Compile Include="Models\Module\KHO_ProductModel.cs" />
+    <Compile Include="Models\Module\ProductModel.cs" />
+    <Compile Include="Models\Module\RenderMessaging.cs" />
+    <Compile Include="Models\module_detail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\module_group.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\module_menu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shop_bienthe.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shop_collection.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shop_danhmuc.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shop_danhmuccon.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shop_danhmuc_group.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shop_image.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shop_loai.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shop_page.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shop_phanloai_dotuoi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shop_plan_saleoff.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shop_plan_type.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shop_rightcol.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shop_sanpham.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shop_showhome.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\shop_thuonghieu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\soft_Dvt.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\soft_group_customer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\soft_group_customer_product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\soft_group_product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\soft_Kho.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\soft_KHO_Product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\soft_KHO_Product_Detail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\soft_NPP.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\support_cauhoi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\support_feedback.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\support_silder.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\support_textlink.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_account_admin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_bangtin_conhang.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_Banner.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_content.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_file.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_imagetype.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_mail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_nhanbangtin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_tags_Ref.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sys_tags_Summary.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\1200.css" />
+    <Content Include="Content\css\2x.css" />
+    <Content Include="Content\css\480.css" />
+    <Content Include="Content\css\768.css" />
+    <Content Include="Content\css\992.css" />
+    <Content Include="Content\css\colors.css" />
+    <Content Include="Content\css\Entypo\entypo-webfont.svg" />
+    <Content Include="Content\css\Entypo\licence.txt" />
+    <Content Include="Content\css\error.css" />
+    <Content Include="Content\css\login.css" />
+    <Content Include="Content\css\print.css" />
+    <Content Include="Content\css\reset.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\styles\agenda.css" />
+    <Content Include="Content\css\styles\calendars.css" />
+    <Content Include="Content\css\styles\dashboard.css" />
+    <Content Include="Content\css\styles\files.css" />
+    <Content Include="Content\css\styles\form.css" />
+    <Content Include="Content\css\styles\modal.css" />
+    <Content Include="Content\css\styles\progress-slider.css" />
+    <Content Include="Content\css\styles\switches.css" />
+    <Content Include="Content\css\styles\table.css" />
+    <Content Include="Content\HtmlPage1.html" />
+    <Content Include="Content\Test.html" />
+    <Content Include="Scripts\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="Scripts\knockout.validation.debug.js" />
+    <Content Include="Scripts\knockout.validation.js" />
+    <Content Include="Scripts\module\CN\warehouse\mv.warehouse.js" />
+    <Content Include="Scripts\module\CN\warehouse\mv.warehousrDetail.js" />
+    <Content Include="Scripts\module\DM\dvt.js" />
+    <Content Include="Scripts\module\DM\groupCustomer.js" />
+    <Content Include="Scripts\module\DM\groupCustomer_Product.js" />
+    <Content Include="Scripts\module\DM\groupProduct.js" />
+    <Content Include="Scripts\module\DM\KHO.js" />
+    <Content Include="Scripts\module\DM\NPP.js" />
+    <Content Include="Scripts\module\DM\product.js" />
+    <Content Include="Scripts\plugin\bindingHandlers.js" />
+    <Content Include="Scripts\plugin\bootstrap.js" />
+    <Content Include="Scripts\plugin\bootstrap.min.js" />
+    <Content Include="Scripts\plugin\datepicker\bootstrap-datepicker.js" />
+    <Content Include="Scripts\plugin\datepicker\bootstrap.css" />
+    <Content Include="Scripts\plugin\datepicker\datepicker.css" />
+    <Content Include="Scripts\plugin\jquery-ui.js" />
+    <Content Include="Scripts\plugin\jquery.globalize\cultures\globalize.culture.en-US.js" />
+    <Content Include="Scripts\plugin\jquery.globalize\cultures\globalize.culture.vi-VN.js" />
+    <Content Include="Scripts\plugin\jquery.globalize\globalize.js" />
+    <Content Include="Scripts\plugin\knockout_datatables.js" />
+    <Content Include="Scripts\plugin\selectpicker\css\bootstrap-select.css" />
+    <Content Include="Scripts\plugin\selectpicker\css\bootstrap-select.min.css" />
+    <Content Include="Scripts\plugin\selectpicker\js\bootstrap-select.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\bootstrap-select.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-ar_AR.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-ar_AR.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-bg_BG.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-bg_BG.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-cro_CRO.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-cro_CRO.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-cs_CZ.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-da_DK.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-da_DK.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-de_DE.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-de_DE.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-en_US.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-en_US.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-es_CL.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-es_CL.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-eu.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-eu.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-fa_IR.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-fa_IR.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-fi_FI.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-fi_FI.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-fr_FR.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-fr_FR.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-hu_HU.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-hu_HU.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-id_ID.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-id_ID.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-it_IT.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-it_IT.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-ko_KR.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-ko_KR.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-lt_LT.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-lt_LT.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-nb_NO.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-nb_NO.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-nl_NL.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-nl_NL.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-pl_PL.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-pl_PL.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-pt_BR.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-pt_BR.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-pt_PT.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-pt_PT.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-ro_RO.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-ro_RO.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-ru_RU.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-ru_RU.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-sk_SK.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-sk_SK.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-sl_SI.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-sl_SI.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-sv_SE.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-sv_SE.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-tr_TR.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-tr_TR.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-ua_UA.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-ua_UA.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-zh_CN.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-zh_CN.min.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-zh_TW.js" />
+    <Content Include="Scripts\plugin\selectpicker\js\i18n\defaults-zh_TW.min.js" />
+    <Content Include="Scripts\plugin\Utils.js" />
+    <Content Include="Scripts\tabs_dynamic.js" />
+    <Content Include="Content\css\tabs_dynamic.css" />
+    <Content Include="Content\css\tabs_icons.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\css\Entypo\entypo-webfont.eot" />
+    <Content Include="Content\css\Entypo\entypo-webfont.ttf" />
+    <Content Include="Content\css\Entypo\entypo-webfont.woff" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\SoftBBM.pubxml" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Images\img\demo\gallery\picture-1.jpg" />
+    <Content Include="Images\img\demo\gallery\picture-2.jpg" />
+    <Content Include="Images\img\demo\gallery\picture-3.jpg" />
+    <Content Include="Images\img\demo\gallery\picture-4.jpg" />
+    <Content Include="Images\img\demo\gallery\picture-5.jpg" />
+    <Content Include="Images\img\demo\gallery\picture-6.jpg" />
+    <Content Include="Images\img\demo\gallery\picture-7.jpg" />
+    <Content Include="Images\img\demo\gallery\picture-8.jpg" />
+    <Content Include="Images\img\demo\icon.png" />
+    <Content Include="Images\img\demo\picto.png" />
+    <Content Include="Images\img\demo\picture.png" />
+    <Content Include="Images\img\effects\dashboard-bottom-shadow.png" />
+    <Content Include="Images\img\effects\dashboard-top-shadow.png" />
+    <Content Include="Images\img\effects\glow.png" />
+    <Content Include="Images\img\effects\page-glow.png" />
+    <Content Include="Images\img\effects\wizard-steps-separator.png" />
+    <Content Include="Images\img\favicons\apple-touch-icon-ipad.png" />
+    <Content Include="Images\img\favicons\apple-touch-icon-itunes.png" />
+    <Content Include="Images\img\favicons\apple-touch-icon-retina.png" />
+    <Content Include="Images\img\favicons\apple-touch-icon.png" />
+    <Content Include="Images\img\favicons\favicon.ico" />
+    <Content Include="Images\img\favicons\favicon.png" />
+    <Content Include="Images\img\favicons\watermark.png" />
+    <Content Include="Images\img\fieldset-bg.gif" />
+    <Content Include="Images\img\fineFiles\128\aac.png" />
+    <Content Include="Images\img\fineFiles\128\access.png" />
+    <Content Include="Images\img\fineFiles\128\avi.png" />
+    <Content Include="Images\img\fineFiles\128\bat.png" />
+    <Content Include="Images\img\fineFiles\128\bmp.png" />
+    <Content Include="Images\img\fineFiles\128\chm.png" />
+    <Content Include="Images\img\fineFiles\128\css.png" />
+    <Content Include="Images\img\fineFiles\128\dat.png" />
+    <Content Include="Images\img\fineFiles\128\default.png" />
+    <Content Include="Images\img\fineFiles\128\desktop.png" />
+    <Content Include="Images\img\fineFiles\128\dll.png" />
+    <Content Include="Images\img\fineFiles\128\excel.png" />
+    <Content Include="Images\img\fineFiles\128\exe.png" />
+    <Content Include="Images\img\fineFiles\128\fon.png" />
+    <Content Include="Images\img\fineFiles\128\gif.png" />
+    <Content Include="Images\img\fineFiles\128\html.png" />
+    <Content Include="Images\img\fineFiles\128\ini.png" />
+    <Content Include="Images\img\fineFiles\128\jar.png" />
+    <Content Include="Images\img\fineFiles\128\jpg.png" />
+    <Content Include="Images\img\fineFiles\128\js.png" />
+    <Content Include="Images\img\fineFiles\128\log.png" />
+    <Content Include="Images\img\fineFiles\128\mov.png" />
+    <Content Include="Images\img\fineFiles\128\mp3.png" />
+    <Content Include="Images\img\fineFiles\128\mpg.png" />
+    <Content Include="Images\img\fineFiles\128\otf.png" />
+    <Content Include="Images\img\fineFiles\128\other_image.png" />
+    <Content Include="Images\img\fineFiles\128\other_movie.png" />
+    <Content Include="Images\img\fineFiles\128\other_music.png" />
+    <Content Include="Images\img\fineFiles\128\other_music2.png" />
+    <Content Include="Images\img\fineFiles\128\pdf.png" />
+    <Content Include="Images\img\fineFiles\128\png.png" />
+    <Content Include="Images\img\fineFiles\128\powerpoint.png" />
+    <Content Include="Images\img\fineFiles\128\real.png" />
+    <Content Include="Images\img\fineFiles\128\reg.png" />
+    <Content Include="Images\img\fineFiles\128\rtf.png" />
+    <Content Include="Images\img\fineFiles\128\swf.png" />
+    <Content Include="Images\img\fineFiles\128\sys.png" />
+    <Content Include="Images\img\fineFiles\128\text.png" />
+    <Content Include="Images\img\fineFiles\128\ttc.png" />
+    <Content Include="Images\img\fineFiles\128\ttf.png" />
+    <Content Include="Images\img\fineFiles\128\vbs.png" />
+    <Content Include="Images\img\fineFiles\128\wav.png" />
+    <Content Include="Images\img\fineFiles\128\wma.png" />
+    <Content Include="Images\img\fineFiles\128\wmv.png" />
+    <Content Include="Images\img\fineFiles\128\word.png" />
+    <Content Include="Images\img\fineFiles\128\xml.png" />
+    <Content Include="Images\img\fineFiles\128\xsl.png" />
+    <Content Include="Images\img\fineFiles\128\_close.png" />
+    <Content Include="Images\img\fineFiles\128\_documents.png" />
+    <Content Include="Images\img\fineFiles\128\_favorites.png" />
+    <Content Include="Images\img\fineFiles\128\_image.png" />
+    <Content Include="Images\img\fineFiles\128\_movie.png" />
+    <Content Include="Images\img\fineFiles\128\_music.png" />
+    <Content Include="Images\img\fineFiles\128\_net.png" />
+    <Content Include="Images\img\fineFiles\128\_open.png" />
+    <Content Include="Images\img\fineFiles\128\_programfiles.png" />
+    <Content Include="Images\img\fineFiles\128\_works.png" />
+    <Content Include="Images\img\fineFiles\16\aac.png" />
+    <Content Include="Images\img\fineFiles\16\access.png" />
+    <Content Include="Images\img\fineFiles\16\avi.png" />
+    <Content Include="Images\img\fineFiles\16\bat.png" />
+    <Content Include="Images\img\fineFiles\16\bmp.png" />
+    <Content Include="Images\img\fineFiles\16\chm.png" />
+    <Content Include="Images\img\fineFiles\16\css.png" />
+    <Content Include="Images\img\fineFiles\16\dat.png" />
+    <Content Include="Images\img\fineFiles\16\default.png" />
+    <Content Include="Images\img\fineFiles\16\desktop.png" />
+    <Content Include="Images\img\fineFiles\16\dll.png" />
+    <Content Include="Images\img\fineFiles\16\excel.png" />
+    <Content Include="Images\img\fineFiles\16\exe.png" />
+    <Content Include="Images\img\fineFiles\16\fon.png" />
+    <Content Include="Images\img\fineFiles\16\gif.png" />
+    <Content Include="Images\img\fineFiles\16\html.png" />
+    <Content Include="Images\img\fineFiles\16\ini.png" />
+    <Content Include="Images\img\fineFiles\16\jar.png" />
+    <Content Include="Images\img\fineFiles\16\jpg.png" />
+    <Content Include="Images\img\fineFiles\16\js.png" />
+    <Content Include="Images\img\fineFiles\16\log.png" />
+    <Content Include="Images\img\fineFiles\16\mov.png" />
+    <Content Include="Images\img\fineFiles\16\mp3.png" />
+    <Content Include="Images\img\fineFiles\16\mpg.png" />
+    <Content Include="Images\img\fineFiles\16\otf.png" />
+    <Content Include="Images\img\fineFiles\16\other_image.png" />
+    <Content Include="Images\img\fineFiles\16\other_movie.png" />
+    <Content Include="Images\img\fineFiles\16\other_music.png" />
+    <Content Include="Images\img\fineFiles\16\other_music2.png" />
+    <Content Include="Images\img\fineFiles\16\pdf.png" />
+    <Content Include="Images\img\fineFiles\16\png.png" />
+    <Content Include="Images\img\fineFiles\16\powerpoint.png" />
+    <Content Include="Images\img\fineFiles\16\real.png" />
+    <Content Include="Images\img\fineFiles\16\reg.png" />
+    <Content Include="Images\img\fineFiles\16\rtf.png" />
+    <Content Include="Images\img\fineFiles\16\swf.png" />
+    <Content Include="Images\img\fineFiles\16\sys.png" />
+    <Content Include="Images\img\fineFiles\16\text.png" />
+    <Content Include="Images\img\fineFiles\16\ttc.png" />
+    <Content Include="Images\img\fineFiles\16\ttf.png" />
+    <Content Include="Images\img\fineFiles\16\vbs.png" />
+    <Content Include="Images\img\fineFiles\16\wav.png" />
+    <Content Include="Images\img\fineFiles\16\wma.png" />
+    <Content Include="Images\img\fineFiles\16\wmv.png" />
+    <Content Include="Images\img\fineFiles\16\word.png" />
+    <Content Include="Images\img\fineFiles\16\xml.png" />
+    <Content Include="Images\img\fineFiles\16\xsl.png" />
+    <Content Include="Images\img\fineFiles\16\_close.png" />
+    <Content Include="Images\img\fineFiles\16\_documents.png" />
+    <Content Include="Images\img\fineFiles\16\_favorites.png" />
+    <Content Include="Images\img\fineFiles\16\_image.png" />
+    <Content Include="Images\img\fineFiles\16\_movie.png" />
+    <Content Include="Images\img\fineFiles\16\_music.png" />
+    <Content Include="Images\img\fineFiles\16\_net.png" />
+    <Content Include="Images\img\fineFiles\16\_open.png" />
+    <Content Include="Images\img\fineFiles\16\_programfiles.png" />
+    <Content Include="Images\img\fineFiles\16\_works.png" />
+    <Content Include="Images\img\fineFiles\24\aac.png" />
+    <Content Include="Images\img\fineFiles\24\access.png" />
+    <Content Include="Images\img\fineFiles\24\avi.png" />
+    <Content Include="Images\img\fineFiles\24\bat.png" />
+    <Content Include="Images\img\fineFiles\24\bmp.png" />
+    <Content Include="Images\img\fineFiles\24\chm.png" />
+    <Content Include="Images\img\fineFiles\24\css.png" />
+    <Content Include="Images\img\fineFiles\24\dat.png" />
+    <Content Include="Images\img\fineFiles\24\default.png" />
+    <Content Include="Images\img\fineFiles\24\desktop.png" />
+    <Content Include="Images\img\fineFiles\24\dll.png" />
+    <Content Include="Images\img\fineFiles\24\excel.png" />
+    <Content Include="Images\img\fineFiles\24\exe.png" />
+    <Content Include="Images\img\fineFiles\24\fon.png" />
+    <Content Include="Images\img\fineFiles\24\gif.png" />
+    <Content Include="Images\img\fineFiles\24\html.png" />
+    <Content Include="Images\img\fineFiles\24\ini.png" />
+    <Content Include="Images\img\fineFiles\24\jar.png" />
+    <Content Include="Images\img\fineFiles\24\jpg.png" />
+    <Content Include="Images\img\fineFiles\24\js.png" />
+    <Content Include="Images\img\fineFiles\24\log.png" />
+    <Content Include="Images\img\fineFiles\24\mov.png" />
+    <Content Include="Images\img\fineFiles\24\mp3.png" />
+    <Content Include="Images\img\fineFiles\24\mpg.png" />
+    <Content Include="Images\img\fineFiles\24\otf.png" />
+    <Content Include="Images\img\fineFiles\24\other_image.png" />
+    <Content Include="Images\img\fineFiles\24\other_movie.png" />
+    <Content Include="Images\img\fineFiles\24\other_music.png" />
+    <Content Include="Images\img\fineFiles\24\other_music2.png" />
+    <Content Include="Images\img\fineFiles\24\png.png" />
+    <Content Include="Images\img\fineFiles\24\powerpoint.png" />
+    <Content Include="Images\img\fineFiles\24\real.png" />
+    <Content Include="Images\img\fineFiles\24\reg.png" />
+    <Content Include="Images\img\fineFiles\24\rtf.png" />
+    <Content Include="Images\img\fineFiles\24\swf.png" />
+    <Content Include="Images\img\fineFiles\24\sys.png" />
+    <Content Include="Images\img\fineFiles\24\text.png" />
+    <Content Include="Images\img\fineFiles\24\ttc.png" />
+    <Content Include="Images\img\fineFiles\24\ttf.png" />
+    <Content Include="Images\img\fineFiles\24\vbs.png" />
+    <Content Include="Images\img\fineFiles\24\wav.png" />
+    <Content Include="Images\img\fineFiles\24\wma.png" />
+    <Content Include="Images\img\fineFiles\24\wmv.png" />
+    <Content Include="Images\img\fineFiles\24\word.png" />
+    <Content Include="Images\img\fineFiles\24\xml.png" />
+    <Content Include="Images\img\fineFiles\24\xsl.png" />
+    <Content Include="Images\img\fineFiles\24\_close.png" />
+    <Content Include="Images\img\fineFiles\24\_documents.png" />
+    <Content Include="Images\img\fineFiles\24\_favorites.png" />
+    <Content Include="Images\img\fineFiles\24\_image.png" />
+    <Content Include="Images\img\fineFiles\24\_movie.png" />
+    <Content Include="Images\img\fineFiles\24\_music.png" />
+    <Content Include="Images\img\fineFiles\24\_net.png" />
+    <Content Include="Images\img\fineFiles\24\_open.png" />
+    <Content Include="Images\img\fineFiles\24\_programfiles.png" />
+    <Content Include="Images\img\fineFiles\24\_works.png" />
+    <Content Include="Images\img\fineFiles\32\aac.png" />
+    <Content Include="Images\img\fineFiles\32\access.png" />
+    <Content Include="Images\img\fineFiles\32\avi.png" />
+    <Content Include="Images\img\fineFiles\32\bat.png" />
+    <Content Include="Images\img\fineFiles\32\bmp.png" />
+    <Content Include="Images\img\fineFiles\32\chm.png" />
+    <Content Include="Images\img\fineFiles\32\css.png" />
+    <Content Include="Images\img\fineFiles\32\dat.png" />
+    <Content Include="Images\img\fineFiles\32\default.png" />
+    <Content Include="Images\img\fineFiles\32\desktop.png" />
+    <Content Include="Images\img\fineFiles\32\dll.png" />
+    <Content Include="Images\img\fineFiles\32\excel.png" />
+    <Content Include="Images\img\fineFiles\32\exe.png" />
+    <Content Include="Images\img\fineFiles\32\fon.png" />
+    <Content Include="Images\img\fineFiles\32\gif.png" />
+    <Content Include="Images\img\fineFiles\32\html.png" />
+    <Content Include="Images\img\fineFiles\32\ini.png" />
+    <Content Include="Images\img\fineFiles\32\jar.png" />
+    <Content Include="Images\img\fineFiles\32\jpg.png" />
+    <Content Include="Images\img\fineFiles\32\js.png" />
+    <Content Include="Images\img\fineFiles\32\log.png" />
+    <Content Include="Images\img\fineFiles\32\mov.png" />
+    <Content Include="Images\img\fineFiles\32\mp3.png" />
+    <Content Include="Images\img\fineFiles\32\mpg.png" />
+    <Content Include="Images\img\fineFiles\32\otf.png" />
+    <Content Include="Images\img\fineFiles\32\other_image.png" />
+    <Content Include="Images\img\fineFiles\32\other_movie.png" />
+    <Content Include="Images\img\fineFiles\32\other_music.png" />
+    <Content Include="Images\img\fineFiles\32\other_music2.png" />
+    <Content Include="Images\img\fineFiles\32\pdf.png" />
+    <Content Include="Images\img\fineFiles\32\png.png" />
+    <Content Include="Images\img\fineFiles\32\powerpoint.png" />
+    <Content Include="Images\img\fineFiles\32\real.png" />
+    <Content Include="Images\img\fineFiles\32\reg.png" />
+    <Content Include="Images\img\fineFiles\32\rtf.png" />
+    <Content Include="Images\img\fineFiles\32\swf.png" />
+    <Content Include="Images\img\fineFiles\32\sys.png" />
+    <Content Include="Images\img\fineFiles\32\text.png" />
+    <Content Include="Images\img\fineFiles\32\ttc.png" />
+    <Content Include="Images\img\fineFiles\32\ttf.png" />
+    <Content Include="Images\img\fineFiles\32\vbs.png" />
+    <Content Include="Images\img\fineFiles\32\wav.png" />
+    <Content Include="Images\img\fineFiles\32\wma.png" />
+    <Content Include="Images\img\fineFiles\32\wmv.png" />
+    <Content Include="Images\img\fineFiles\32\word.png" />
+    <Content Include="Images\img\fineFiles\32\xml.png" />
+    <Content Include="Images\img\fineFiles\32\xsl.png" />
+    <Content Include="Images\img\fineFiles\32\_close.png" />
+    <Content Include="Images\img\fineFiles\32\_documents.png" />
+    <Content Include="Images\img\fineFiles\32\_favorites.png" />
+    <Content Include="Images\img\fineFiles\32\_image.png" />
+    <Content Include="Images\img\fineFiles\32\_movie.png" />
+    <Content Include="Images\img\fineFiles\32\_music.png" />
+    <Content Include="Images\img\fineFiles\32\_net.png" />
+    <Content Include="Images\img\fineFiles\32\_open.png" />
+    <Content Include="Images\img\fineFiles\32\_programfiles.png" />
+    <Content Include="Images\img\fineFiles\32\_works.png" />
+    <Content Include="Images\img\fineFiles\48\aac.png" />
+    <Content Include="Images\img\fineFiles\48\access.png" />
+    <Content Include="Images\img\fineFiles\48\avi.png" />
+    <Content Include="Images\img\fineFiles\48\bat.png" />
+    <Content Include="Images\img\fineFiles\48\bmp.png" />
+    <Content Include="Images\img\fineFiles\48\chm.png" />
+    <Content Include="Images\img\fineFiles\48\css.png" />
+    <Content Include="Images\img\fineFiles\48\dat.png" />
+    <Content Include="Images\img\fineFiles\48\default.png" />
+    <Content Include="Images\img\fineFiles\48\desktop.png" />
+    <Content Include="Images\img\fineFiles\48\dll.png" />
+    <Content Include="Images\img\fineFiles\48\excel.png" />
+    <Content Include="Images\img\fineFiles\48\exe.png" />
+    <Content Include="Images\img\fineFiles\48\fon.png" />
+    <Content Include="Images\img\fineFiles\48\gif.png" />
+    <Content Include="Images\img\fineFiles\48\html.png" />
+    <Content Include="Images\img\fineFiles\48\ini.png" />
+    <Content Include="Images\img\fineFiles\48\jar.png" />
+    <Content Include="Images\img\fineFiles\48\jpg.png" />
+    <Content Include="Images\img\fineFiles\48\js.png" />
+    <Content Include="Images\img\fineFiles\48\log.png" />
+    <Content Include="Images\img\fineFiles\48\mov.png" />
+    <Content Include="Images\img\fineFiles\48\mp3.png" />
+    <Content Include="Images\img\fineFiles\48\mpg.png" />
+    <Content Include="Images\img\fineFiles\48\otf.png" />
+    <Content Include="Images\img\fineFiles\48\other_image.png" />
+    <Content Include="Images\img\fineFiles\48\other_movie.png" />
+    <Content Include="Images\img\fineFiles\48\other_music.png" />
+    <Content Include="Images\img\fineFiles\48\other_music2.png" />
+    <Content Include="Images\img\fineFiles\48\pdf.png" />
+    <Content Include="Images\img\fineFiles\48\png.png" />
+    <Content Include="Images\img\fineFiles\48\powerpoint.png" />
+    <Content Include="Images\img\fineFiles\48\real.png" />
+    <Content Include="Images\img\fineFiles\48\reg.png" />
+    <Content Include="Images\img\fineFiles\48\rtf.png" />
+    <Content Include="Images\img\fineFiles\48\swf.png" />
+    <Content Include="Images\img\fineFiles\48\sys.png" />
+    <Content Include="Images\img\fineFiles\48\text.png" />
+    <Content Include="Images\img\fineFiles\48\ttc.png" />
+    <Content Include="Images\img\fineFiles\48\ttf.png" />
+    <Content Include="Images\img\fineFiles\48\vbs.png" />
+    <Content Include="Images\img\fineFiles\48\wav.png" />
+    <Content Include="Images\img\fineFiles\48\wma.png" />
+    <Content Include="Images\img\fineFiles\48\wmv.png" />
+    <Content Include="Images\img\fineFiles\48\word.png" />
+    <Content Include="Images\img\fineFiles\48\xml.png" />
+    <Content Include="Images\img\fineFiles\48\xsl.png" />
+    <Content Include="Images\img\fineFiles\48\_close.png" />
+    <Content Include="Images\img\fineFiles\48\_documents.png" />
+    <Content Include="Images\img\fineFiles\48\_favorites.png" />
+    <Content Include="Images\img\fineFiles\48\_image.png" />
+    <Content Include="Images\img\fineFiles\48\_movie.png" />
+    <Content Include="Images\img\fineFiles\48\_music.png" />
+    <Content Include="Images\img\fineFiles\48\_net.png" />
+    <Content Include="Images\img\fineFiles\48\_open.png" />
+    <Content Include="Images\img\fineFiles\48\_programfiles.png" />
+    <Content Include="Images\img\fineFiles\48\_works.png" />
+    <Content Include="Images\img\fineFiles\64\aac.png" />
+    <Content Include="Images\img\fineFiles\64\access.png" />
+    <Content Include="Images\img\fineFiles\64\avi.png" />
+    <Content Include="Images\img\fineFiles\64\bat.png" />
+    <Content Include="Images\img\fineFiles\64\bmp.png" />
+    <Content Include="Images\img\fineFiles\64\chm.png" />
+    <Content Include="Images\img\fineFiles\64\css.png" />
+    <Content Include="Images\img\fineFiles\64\dat.png" />
+    <Content Include="Images\img\fineFiles\64\default.png" />
+    <Content Include="Images\img\fineFiles\64\desktop.png" />
+    <Content Include="Images\img\fineFiles\64\dll.png" />
+    <Content Include="Images\img\fineFiles\64\excel.png" />
+    <Content Include="Images\img\fineFiles\64\exe.png" />
+    <Content Include="Images\img\fineFiles\64\fon.png" />
+    <Content Include="Images\img\fineFiles\64\gif.png" />
+    <Content Include="Images\img\fineFiles\64\html.png" />
+    <Content Include="Images\img\fineFiles\64\ini.png" />
+    <Content Include="Images\img\fineFiles\64\jar.png" />
+    <Content Include="Images\img\fineFiles\64\jpg.png" />
+    <Content Include="Images\img\fineFiles\64\js.png" />
+    <Content Include="Images\img\fineFiles\64\log.png" />
+    <Content Include="Images\img\fineFiles\64\mov.png" />
+    <Content Include="Images\img\fineFiles\64\mp3.png" />
+    <Content Include="Images\img\fineFiles\64\mpg.png" />
+    <Content Include="Images\img\fineFiles\64\otf.png" />
+    <Content Include="Images\img\fineFiles\64\other_image.png" />
+    <Content Include="Images\img\fineFiles\64\other_movie.png" />
+    <Content Include="Images\img\fineFiles\64\other_music.png" />
+    <Content Include="Images\img\fineFiles\64\other_music2.png" />
+    <Content Include="Images\img\fineFiles\64\pdf.png" />
+    <Content Include="Images\img\fineFiles\64\png.png" />
+    <Content Include="Images\img\fineFiles\64\powerpoint.png" />
+    <Content Include="Images\img\fineFiles\64\real.png" />
+    <Content Include="Images\img\fineFiles\64\reg.png" />
+    <Content Include="Images\img\fineFiles\64\rtf.png" />
+    <Content Include="Images\img\fineFiles\64\swf.png" />
+    <Content Include="Images\img\fineFiles\64\sys.png" />
+    <Content Include="Images\img\fineFiles\64\text.png" />
+    <Content Include="Images\img\fineFiles\64\ttc.png" />
+    <Content Include="Images\img\fineFiles\64\ttf.png" />
+    <Content Include="Images\img\fineFiles\64\vbs.png" />
+    <Content Include="Images\img\fineFiles\64\wav.png" />
+    <Content Include="Images\img\fineFiles\64\wma.png" />
+    <Content Include="Images\img\fineFiles\64\wmv.png" />
+    <Content Include="Images\img\fineFiles\64\word.png" />
+    <Content Include="Images\img\fineFiles\64\xml.png" />
+    <Content Include="Images\img\fineFiles\64\xsl.png" />
+    <Content Include="Images\img\fineFiles\64\_close.png" />
+    <Content Include="Images\img\fineFiles\64\_documents.png" />
+    <Content Include="Images\img\fineFiles\64\_favorites.png" />
+    <Content Include="Images\img\fineFiles\64\_image.png" />
+    <Content Include="Images\img\fineFiles\64\_movie.png" />
+    <Content Include="Images\img\fineFiles\64\_music.png" />
+    <Content Include="Images\img\fineFiles\64\_net.png" />
+    <Content Include="Images\img\fineFiles\64\_open.png" />
+    <Content Include="Images\img\fineFiles\64\_programfiles.png" />
+    <Content Include="Images\img\fineFiles\64\_works.png" />
+    <Content Include="Images\img\fineFiles\72\aac.png" />
+    <Content Include="Images\img\fineFiles\72\access.png" />
+    <Content Include="Images\img\fineFiles\72\avi.png" />
+    <Content Include="Images\img\fineFiles\72\bat.png" />
+    <Content Include="Images\img\fineFiles\72\bmp.png" />
+    <Content Include="Images\img\fineFiles\72\chm.png" />
+    <Content Include="Images\img\fineFiles\72\css.png" />
+    <Content Include="Images\img\fineFiles\72\dat.png" />
+    <Content Include="Images\img\fineFiles\72\default.png" />
+    <Content Include="Images\img\fineFiles\72\desktop.png" />
+    <Content Include="Images\img\fineFiles\72\dll.png" />
+    <Content Include="Images\img\fineFiles\72\excel.png" />
+    <Content Include="Images\img\fineFiles\72\exe.png" />
+    <Content Include="Images\img\fineFiles\72\fon.png" />
+    <Content Include="Images\img\fineFiles\72\gif.png" />
+    <Content Include="Images\img\fineFiles\72\html.png" />
+    <Content Include="Images\img\fineFiles\72\ini.png" />
+    <Content Include="Images\img\fineFiles\72\jar.png" />
+    <Content Include="Images\img\fineFiles\72\jpg.png" />
+    <Content Include="Images\img\fineFiles\72\js.png" />
+    <Content Include="Images\img\fineFiles\72\log.png" />
+    <Content Include="Images\img\fineFiles\72\mov.png" />
+    <Content Include="Images\img\fineFiles\72\mp3.png" />
+    <Content Include="Images\img\fineFiles\72\mpg.png" />
+    <Content Include="Images\img\fineFiles\72\otf.png" />
+    <Content Include="Images\img\fineFiles\72\other_image.png" />
+    <Content Include="Images\img\fineFiles\72\other_movie.png" />
+    <Content Include="Images\img\fineFiles\72\other_music.png" />
+    <Content Include="Images\img\fineFiles\72\other_music2.png" />
+    <Content Include="Images\img\fineFiles\72\pdf.png" />
+    <Content Include="Images\img\fineFiles\72\png.png" />
+    <Content Include="Images\img\fineFiles\72\powerpoint.png" />
+    <Content Include="Images\img\fineFiles\72\real.png" />
+    <Content Include="Images\img\fineFiles\72\reg.png" />
+    <Content Include="Images\img\fineFiles\72\rtf.png" />
+    <Content Include="Images\img\fineFiles\72\swf.png" />
+    <Content Include="Images\img\fineFiles\72\sys.png" />
+    <Content Include="Images\img\fineFiles\72\text.png" />
+    <Content Include="Images\img\fineFiles\72\ttc.png" />
+    <Content Include="Images\img\fineFiles\72\ttf.png" />
+    <Content Include="Images\img\fineFiles\72\vbs.png" />
+    <Content Include="Images\img\fineFiles\72\wav.png" />
+    <Content Include="Images\img\fineFiles\72\wma.png" />
+    <Content Include="Images\img\fineFiles\72\wmv.png" />
+    <Content Include="Images\img\fineFiles\72\word.png" />
+    <Content Include="Images\img\fineFiles\72\xml.png" />
+    <Content Include="Images\img\fineFiles\72\xsl.png" />
+    <Content Include="Images\img\fineFiles\72\_close.png" />
+    <Content Include="Images\img\fineFiles\72\_documents.png" />
+    <Content Include="Images\img\fineFiles\72\_favorites.png" />
+    <Content Include="Images\img\fineFiles\72\_image.png" />
+    <Content Include="Images\img\fineFiles\72\_movie.png" />
+    <Content Include="Images\img\fineFiles\72\_music.png" />
+    <Content Include="Images\img\fineFiles\72\_net.png" />
+    <Content Include="Images\img\fineFiles\72\_open.png" />
+    <Content Include="Images\img\fineFiles\72\_programfiles.png" />
+    <Content Include="Images\img\fineFiles\72\_works.png" />
+    <Content Include="Images\img\fineFiles\96\aac.png" />
+    <Content Include="Images\img\fineFiles\96\access.png" />
+    <Content Include="Images\img\fineFiles\96\avi.png" />
+    <Content Include="Images\img\fineFiles\96\bat.png" />
+    <Content Include="Images\img\fineFiles\96\bmp.png" />
+    <Content Include="Images\img\fineFiles\96\chm.png" />
+    <Content Include="Images\img\fineFiles\96\css.png" />
+    <Content Include="Images\img\fineFiles\96\dat.png" />
+    <Content Include="Images\img\fineFiles\96\default.png" />
+    <Content Include="Images\img\fineFiles\96\desktop.png" />
+    <Content Include="Images\img\fineFiles\96\dll.png" />
+    <Content Include="Images\img\fineFiles\96\excel.png" />
+    <Content Include="Images\img\fineFiles\96\exe.png" />
+    <Content Include="Images\img\fineFiles\96\fon.png" />
+    <Content Include="Images\img\fineFiles\96\gif.png" />
+    <Content Include="Images\img\fineFiles\96\html.png" />
+    <Content Include="Images\img\fineFiles\96\ini.png" />
+    <Content Include="Images\img\fineFiles\96\jar.png" />
+    <Content Include="Images\img\fineFiles\96\jpg.png" />
+    <Content Include="Images\img\fineFiles\96\js.png" />
+    <Content Include="Images\img\fineFiles\96\log.png" />
+    <Content Include="Images\img\fineFiles\96\mov.png" />
+    <Content Include="Images\img\fineFiles\96\mp3.png" />
+    <Content Include="Images\img\fineFiles\96\mpg.png" />
+    <Content Include="Images\img\fineFiles\96\otf.png" />
+    <Content Include="Images\img\fineFiles\96\other_image.png" />
+    <Content Include="Images\img\fineFiles\96\other_movie.png" />
+    <Content Include="Images\img\fineFiles\96\other_music.png" />
+    <Content Include="Images\img\fineFiles\96\other_music2.png" />
+    <Content Include="Images\img\fineFiles\96\pdf.png" />
+    <Content Include="Images\img\fineFiles\96\png.png" />
+    <Content Include="Images\img\fineFiles\96\powerpoint.png" />
+    <Content Include="Images\img\fineFiles\96\real.png" />
+    <Content Include="Images\img\fineFiles\96\reg.png" />
+    <Content Include="Images\img\fineFiles\96\rtf.png" />
+    <Content Include="Images\img\fineFiles\96\swf.png" />
+    <Content Include="Images\img\fineFiles\96\sys.png" />
+    <Content Include="Images\img\fineFiles\96\text.png" />
+    <Content Include="Images\img\fineFiles\96\ttc.png" />
+    <Content Include="Images\img\fineFiles\96\ttf.png" />
+    <Content Include="Images\img\fineFiles\96\vbs.png" />
+    <Content Include="Images\img\fineFiles\96\wav.png" />
+    <Content Include="Images\img\fineFiles\96\wma.png" />
+    <Content Include="Images\img\fineFiles\96\wmv.png" />
+    <Content Include="Images\img\fineFiles\96\word.png" />
+    <Content Include="Images\img\fineFiles\96\xml.png" />
+    <Content Include="Images\img\fineFiles\96\xsl.png" />
+    <Content Include="Images\img\fineFiles\96\_close.png" />
+    <Content Include="Images\img\fineFiles\96\_documents.png" />
+    <Content Include="Images\img\fineFiles\96\_favorites.png" />
+    <Content Include="Images\img\fineFiles\96\_image.png" />
+    <Content Include="Images\img\fineFiles\96\_movie.png" />
+    <Content Include="Images\img\fineFiles\96\_music.png" />
+    <Content Include="Images\img\fineFiles\96\_net.png" />
+    <Content Include="Images\img\fineFiles\96\_open.png" />
+    <Content Include="Images\img\fineFiles\96\_programfiles.png" />
+    <Content Include="Images\img\fineFiles\96\_works.png" />
+    <Content Include="Images\img\highres\shortcuts.png" />
+    <Content Include="Images\img\login-title.png" />
+    <Content Include="Images\img\menu.png" />
+    <Content Include="Images\img\old-browsers\768\bg_body_reversed_shortcuts_li_after.png" />
+    <Content Include="Images\img\old-browsers\768\bg_shortcuts_li_after.png" />
+    <Content Include="Images\img\old-browsers\992\bg_body_reversed_menu-content_before.png" />
+    <Content Include="Images\img\old-browsers\992\bg_menu-content_after.png" />
+    <Content Include="Images\img\old-browsers\992\bg_menu-content_before.png" />
+    <Content Include="Images\img\old-browsers\black45.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_anthracite-active_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_anthracite-gradient.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_anthracite-gradient_glossy.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_anthracite-gradient_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_anthracite-gradient_glossy_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_anthracite-gradient_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_black-gradient_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_black-gradient_glossy_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_black-gradient_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_blue-gradient_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_blue-gradient_glossy_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_blue-gradient_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_button_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_button_glossy_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_button_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_count_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_count_glossy_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_count_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_green-gradient_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_green-gradient_glossy_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_green-gradient_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_grey-gradient_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_grey-gradient_glossy_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_grey-gradient_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_orange-gradient_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_orange-gradient_glossy_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_orange-gradient_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_red-gradient_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_red-gradient_glossy_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_red-gradient_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_silver-gradient_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_silver-gradient_glossy_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_silver-gradient_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_white-gradient_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_white-gradient_glossy_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_a_white-gradient_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_big-menu.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_black-active_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_black-gradient.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_black-gradient_disabled.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_black-gradient_glossy.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_black-inputs_input.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_black-inputs_switch-button.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_blue-active_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_blue-gradient.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_blue-gradient_glossy.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_button-icon.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_button-icon_glossy.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_button.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_button_active_button-icon.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_button_anthracite-gradient_disabled.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_button_blue-gradient_disabled.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_button_disabled.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_button_glossy.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_button_green-gradient_disabled.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_button_grey-gradient_disabled.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_button_orange-gradient_disabled.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_button_red-gradient_disabled.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_button_white-gradient_disabled.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_count.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_count_glossy.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_disabled_button-icon.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_disabled_switch-on.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_green-active_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_green-gradient.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_green-gradient_glossy.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_grey-active_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_grey-gradient.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_grey-gradient_glossy.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_hover_button-icon_glossy.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_input-wrapper.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_input.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_message.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_message_glossy.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_modal-bar.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_modal.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_no-touch_drop-down_span_hover.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_orange-active_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_orange-gradient.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_orange-gradient_glossy.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_red-active_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_red-gradient.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_red-gradient_glossy.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_ribbon-inner.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_silver-active_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_silver-gradient.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_silver-gradient_disabled.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_silver-gradient_glossy.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_translucid.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_tr_highlight_glossy_th.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_tr_highlight_th.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_white-active_active.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_white-gradient.png" />
+    <Content Include="Images\img\old-browsers\colors\bg_white-gradient_glossy.png" />
+    <Content Include="Images\img\old-browsers\grey20.png" />
+    <Content Include="Images\img\old-browsers\grey50.png" />
+    <Content Include="Images\img\old-browsers\style\bg_menu-footer.png" />
+    <Content Include="Images\img\old-browsers\style\bg_menu_after.png" />
+    <Content Include="Images\img\old-browsers\style\bg_menu_header.png" />
+    <Content Include="Images\img\old-browsers\style\bg_meter.png" />
+    <Content Include="Images\img\old-browsers\style\bg_profile.png" />
+    <Content Include="Images\img\old-browsers\style\bg_shortcuts.png" />
+    <Content Include="Images\img\splash\ipad-landscape.png" />
+    <Content Include="Images\img\splash\ipad-portrait.png" />
+    <Content Include="Images\img\splash\iphone.png" />
+    <Content Include="Images\img\standard\loaders\loading16.gif" />
+    <Content Include="Images\img\standard\loaders\loading16_anthracite.gif" />
+    <Content Include="Images\img\standard\loaders\loading32.gif" />
+    <Content Include="Images\img\standard\loaders\loading32_anthracite.gif" />
+    <Content Include="Images\img\standard\loaders\loading64.gif" />
+    <Content Include="Images\img\standard\loaders\loading64_anthracite.gif" />
+    <Content Include="Images\img\standard\loaders\refreshing16.gif" />
+    <Content Include="Images\img\standard\loaders\refreshing16_anthracite.gif" />
+    <Content Include="Images\img\standard\loaders\refreshing32.gif" />
+    <Content Include="Images\img\standard\loaders\refreshing32_anthracite.gif" />
+    <Content Include="Images\img\standard\loaders\refreshing64.gif" />
+    <Content Include="Images\img\standard\loaders\refreshing64_anthracite.gif" />
+    <Content Include="Images\img\standard\loaders\waiting16.gif" />
+    <Content Include="Images\img\standard\loaders\waiting16_anthracite.gif" />
+    <Content Include="Images\img\standard\loaders\waiting32.gif" />
+    <Content Include="Images\img\standard\loaders\waiting32_anthracite.gif" />
+    <Content Include="Images\img\standard\loaders\waiting64.gif" />
+    <Content Include="Images\img\standard\loaders\waiting64_anthracite.gif" />
+    <Content Include="Images\img\standard\loaders\working16.gif" />
+    <Content Include="Images\img\standard\loaders\working16_anthracite.gif" />
+    <Content Include="Images\img\standard\loaders\working32.gif" />
+    <Content Include="Images\img\standard\loaders\working32_anthracite.gif" />
+    <Content Include="Images\img\standard\loaders\working64.gif" />
+    <Content Include="Images\img\standard\loaders\working64_anthracite.gif" />
+    <Content Include="Images\img\standard\shortcuts.png" />
+    <Content Include="Images\img\standard\sprites.png" />
+    <Content Include="Images\img\textures\fabric.png" />
+    <Content Include="Images\img\textures\grid.png" />
+    <Content Include="Images\img\textures\scratches.png" />
+    <Content Include="Images\img\user.png" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\developr.accordions.js" />
+    <Content Include="Scripts\js\developr.agenda.js" />
+    <Content Include="Scripts\js\developr.auto-resizing.js" />
+    <Content Include="Scripts\js\developr.calendar.js" />
+    <Content Include="Scripts\js\developr.collapsible.js" />
+    <Content Include="Scripts\js\developr.confirm.js" />
+    <Content Include="Scripts\js\developr.content-panel.js" />
+    <Content Include="Scripts\js\developr.input.js" />
+    <Content Include="Scripts\js\developr.message.js" />
+    <Content Include="Scripts\js\developr.modal.js" />
+    <Content Include="Scripts\js\developr.navigable.js" />
+    <Content Include="Scripts\js\developr.notify.js" />
+    <Content Include="Scripts\js\developr.progress-slider.js" />
+    <Content Include="Scripts\js\developr.scroll.js" />
+    <Content Include="Scripts\js\developr.table.js" />
+    <Content Include="Scripts\js\developr.tabs.js" />
+    <Content Include="Scripts\js\developr.tooltip.js" />
+    <Content Include="Scripts\js\developr.wizard.js" />
+    <Content Include="Scripts\js\libs\CLEditor\images\buttons.gif" />
+    <Content Include="Scripts\js\libs\CLEditor\images\toolbar.gif" />
+    <Content Include="Scripts\js\libs\CLEditor\jquery.cleditor.css" />
+    <Content Include="Scripts\js\libs\CLEditor\jquery.cleditor.js" />
+    <Content Include="Scripts\js\libs\CLEditor\jquery.cleditor.min.js" />
+    <Content Include="Scripts\js\libs\DataTables\jquery.dataTables-simple.css" />
+    <Content Include="Scripts\js\libs\DataTables\jquery.dataTables.css" />
+    <Content Include="Scripts\js\libs\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\js\libs\DataTables\license-bsd.txt" />
+    <Content Include="Scripts\js\libs\DataTables\license-gpl2.txt" />
+    <Content Include="Scripts\js\libs\DataTables\Readme.txt" />
+    <Content Include="Scripts\js\libs\formValidator\developr.validationEngine.css" />
+    <Content Include="Scripts\js\libs\formValidator\jquery.validationEngine.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-cz.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-da.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-de.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-en.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-es.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-et.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-fa.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-fi.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-fr.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-hr.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-hu.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-it.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-ja.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-nl.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-pl.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-pt.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-pt_BR.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-ro.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-ru.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-sv.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-tr.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-zh_CN.js" />
+    <Content Include="Scripts\js\libs\formValidator\languages\jquery.validationEngine-zh_TW.js" />
+    <Content Include="Scripts\js\libs\formValidator\other-validations.js" />
+    <Content Include="Scripts\js\libs\glDatePicker\android.css" />
+    <Content Include="Scripts\js\libs\glDatePicker\default.css" />
+    <Content Include="Scripts\js\libs\glDatePicker\developr.css" />
+    <Content Include="Scripts\js\libs\glDatePicker\glDatePicker.js" />
+    <Content Include="Scripts\js\libs\glDatePicker\glDatePicker.min.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-apollo.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-clj.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-css.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-go.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-hs.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-lisp.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-lua.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-ml.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-n.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-proto.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-scala.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-sql.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-tex.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-vb.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-vhdl.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-wiki.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-xq.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\lang-yaml.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\prettify.css" />
+    <Content Include="Scripts\js\libs\google-code-prettify\prettify.js" />
+    <Content Include="Scripts\js\libs\google-code-prettify\sunburst.css" />
+    <Content Include="Scripts\js\libs\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\js\libs\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\js\libs\jquery.details.min.js" />
+    <Content Include="Scripts\js\libs\jquery.tablesorter.min.js" />
+    <Content Include="Scripts\js\libs\modernizr.custom.js" />
+    <Content Include="Scripts\js\libs\respond.min.js" />
+    <Content Include="Scripts\js\libs\tinycon.min.js" />
+    <Content Include="Scripts\js\setup.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Scripts\js\libs\DataTables\package.json" />
+    <Content Include="Scripts\js\libs\glDatePicker\README.md" />
+    <Content Include="Views\Shared\Partial\_menuLf.cshtml" />
+    <Content Include="Views\Shared\Partial\_menuT.cshtml" />
+    <Content Include="Views\Shared\Partial\_footerJs.cshtml" />
+    <Content Include="Views\Shared\Partial\module\DM\_dvt.cshtml" />
+    <Content Include="Views\Shared\Partial\module\DM\_groupProduct.cshtml" />
+    <Content Include="Views\Shared\Partial\module\DM\_groupCustomer.cshtml" />
+    <Content Include="Views\Shared\Partial\module\DM\_NPP.cshtml" />
+    <Content Include="Views\Shared\Partial\module\DM\_KHO.cshtml" />
+    <Content Include="Views\Shared\Partial\module\DM\_product.cshtml" />
+    <Content Include="Views\Shared\Partial\module\DM\_groupCustomer_product.cshtml" />
+    <Content Include="Views\Shared\Partial\module\CN\_warehouse.cshtml" />
+    <Content Include="Views\Shared\Partial\module\CN\_warehouseDetail.cshtml" />
+    <Content Include="Scripts\module\CN\warehouse\m.warehouse.js" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\plugin\selectpicker\js\bootstrap-select.js.map" />
+    <Content Include="Scripts\plugin\selectpicker\css\bootstrap-select.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57812</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57812/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,75 @@
+﻿<script src="~/Scripts/module/DM/groupProduct.js"></script>
+<script>
+    var groupproduct = new GroupProduct();
+    groupproduct.Start();
+</script>
+<div id="groupProductViewId">
+    <fieldset class="fieldset">
+        <legend class="legend black-gradient">
+            Nhóm hàng hóa
+        </legend>
+        <span class="button-group">
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-plus" data-bind="click: function () {  groupproduct.viewmodel().addnewRecord(); }">Tạo mới</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-download">Xuất</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-outbox">Nhập</a>
+        </span>
+        <div class="table-responsive">
+            <table class="table table-bordered table-advance table-hover" id="DataTable_productgroup"
+                   data-bind="dataTable: {
+                              dataSource: groupproduct.listTable,
+                              rowTemplate: 'readonlyTmp_productgroup',
+                              gridId: 'AssetGrid_productgroup',
+                              deferRender: true,
+                              columns:
+                                  [
+                                      {'name':'tenloai' },
+                                  ]
+                            }">
+                <thead>
+                    <tr>
+                        <th>Nhóm hàng hóa</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </fieldset>
+
+    <script type="text/html" id="readonlyTmp_productgroup">
+        <!--ko template: { name: groupproduct.viewmodel().currentTemplate} -->
+        <!--/ko-->
+    </script>
+    <script type="text/html" id="readonlyTemplate_productgroup">
+        <!--ko if: isNew==false -->
+        <!--ko template: { name: 'readTemplate_productgroup'} -->
+        <!--/ko-->
+        <!--/ko-->
+        <!--ko if: isNew==true -->
+        <!--ko template: { name: 'editTemplate_productgroup'} -->
+        <!--/ko-->
+        <!--/ko-->
+    </script>
+    <script type="text/html" id="editTemplate_productgroup">
+        <td>
+            <input type="text" data-bind="value: tenloai" class="input" />
+        </td>
+        <td class="low-padding align-center">
+            <input type="button" class="button compact icon-gear" value="Save" data-bind="click: function () { groupproduct.viewmodel().save($data); }" />
+            <input type="button" class="button compact icon-gear" value="Cancel" data-bind="click: function () {  groupproduct.viewmodel().reset(); }" />
+        </td>
+    </script>
+    <script type="text/html" id="readTemplate_productgroup">
+        <td>
+            <span data-bind="text: tenloai"></span>
+        <td>
+            <input type="button" class="button compact icon-gear" value="Edit" data-bind="click: function () { groupproduct.viewmodel().editTemplate($data);}" />
+            <input type="button" class="button compact icon-gear" value="delete" data-bind="click: function () { groupproduct.viewmodel().delete($data); }" />
+        </td>
+    </script>
+
+    <div class="pageloading">
+        <span class="loader huge"></span>
+    </div>
+</div>

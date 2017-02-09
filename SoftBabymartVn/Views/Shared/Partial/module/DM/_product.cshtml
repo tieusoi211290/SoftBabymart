@@ -1,0 +1,170 @@
+﻿<script src="~/Scripts/module/DM/product.js"></script>
+
+<script>
+    var product = new Product();
+    product.Start();
+</script>
+<div id="productViewId">
+    <p class="button-height inline-label">
+        <span class="label">Nhóm sản phẩm</span>
+        <span class="button-group margin-top">
+            <!--ko foreach:product.listGroupProduct-->
+            <!--ko if:$data.countPrd >0 -->
+            <label data-bind="attr: { for:'button-checkbox-'+Id}" class="button green-active">
+                <input type="checkbox" data-bind="checkedValue: Id,checked: product.chosenGroupProduct,attr: {value:Id,name:'button-checkbox-'+Id,id:'button-checkbox-'+Id}">
+                <!--ko text:tenloai-->
+                <!--/ko-->
+            </label>
+            <!--/ko-->
+            <!--/ko-->
+        </span>
+
+    </p>
+    <p class="button-height inline-label">
+        <span class="label">Nhà phân phối</span>
+        <span class="button-group margin-top">
+            <!--ko foreach:product.listTableNPP-->
+            <label data-bind="attr: { for:'button-checkbox-NPP-'+Id}" class="button green-active">
+                <input type="checkbox" data-bind="checkedValue: Id,checked: product.chosenGroupNPP,attr: {value:Id,name:'button-checkbox-NPP-'+Id,id:'button-checkbox-NPP-'+Id}">
+                <!--ko text:TenNPP-->
+                <!--/ko-->
+            </label>
+            <!--/ko-->
+        </span>
+
+    </p>
+    <!--ko if: product.listTable().length>0 -->
+    <fieldset class="fieldset">
+        <legend class="legend black-gradient">
+            Sản phẩm
+        </legend>
+        <span class="button-group">
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-plus" data-bind="click: function () {  product.viewmodel().addnewRecord(); }">Tạo mới</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-download">Xuất</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-outbox">Nhập</a>
+        </span>
+        <div class="table-responsive dataTable_product">
+            <table class="table table-bordered table-advance table-hover" id="DataTable_product"
+                   data-bind="dataTable: {
+                              dataSource: product.listTable,
+                              rowTemplate: 'readonlyTmp_product',
+                              gridId: 'AssetGrid_product',
+                              deferRender: true,
+                              columns:
+                                  [
+                                      {'name':'masp' },
+                                      {'name':'tensp' },
+                                      {'name':'Tenloai' },
+                                      {'name':'TenNPP' },
+                                      {'name':'TenDvt' },
+                                      {'name':'soft_Barcode' },
+                                      {'name':'soft_GiaTC' },
+                                      {'name':'soft_GiaM' }
+                                  ]
+                            }">
+                <thead>
+                    <tr>
+                        <th>Barcode</th>
+                        <th>Nhóm sản phẩm</th>
+                        <th>Mã</th>
+                        <th>Sản phẩm</th>
+                        <th>Nhà PP</th>
+                        <th>Đvt</th>
+                        <th>Giá mua</th>
+                        <th>Giá tham chiếu</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </fieldset>
+    <script type="text/html" id="readonlyTmp_product">
+        <!--ko template: { name: product.viewmodel().currentTemplate} -->
+        <!--/ko-->
+    </script>
+    <script type="text/html" id="readonlyTemplate_product">
+        <!--ko if: isNew==false -->
+        <!--ko template: { name: 'readTemplate_product'} -->
+        <!--/ko-->
+        <!--/ko-->
+        <!--ko if: isNew==true -->
+        <!--ko template: { name: 'editTemplate_product'} -->
+        <!--/ko-->
+        <!--/ko-->
+    </script>
+    <script type="text/html" id="readTemplate_product">
+        <td><span data-bind="text: soft_Barcode"></span></td>
+        <td><span data-bind="text: Tenloai"></span></td>
+        <td>
+            <span data-bind="text: masp"></span>
+        </td>
+        <td>
+            <span data-bind="text: tensp"></span>
+
+        </td>
+        <td><span data-bind="text: TenNPP"></span></td>
+        <td><span data-bind="text: TenDvt"></span></td>
+        <td><span data-bind="textMoney: soft_GiaM"></span></td>
+        <td><span data-bind="textMoney: soft_GiaTC"></span></td>
+        <td>
+            <input type="button" class="button compact icon-gear" value="Edit" data-bind="click: function () { product.viewmodel().editTemplate($data);}" />
+            <input type="button" class="button compact icon-gear" value="delete" data-bind="click: function () { product.viewmodel().delete($data); }" />
+        </td>
+    </script>
+    <script type="text/html" id="editTemplate_product">
+        <td><input type="text" data-bind="value: soft_Barcode" class="input" /></td>
+        <td>
+            <select class="select" data-bind="
+                        options: product.listGroupProduct,
+                       optionsText: 'tenloai',
+                       optionsValue:'Id',
+                       value: product.selectedGProduct,
+                       optionsCaption: 'Chọn nhóm hàng hóa...',
+                       event: {change: product.selectChanged_GroupProduct},
+                       attr:{'index':product.selectedGProduct}
+        "></select>
+        </td>
+        <td>
+            <input type="text" data-bind="value: masp" class="input" />
+        </td>
+        <td>
+            <input type="text" data-bind="value: tensp" class="input" />
+        </td>
+        <td>
+            <select class="select" data-bind="
+                        options: product.listTableNPP,
+                       optionsText: 'TenNPP',
+                       optionsValue:'Id',
+                       value: product.selectedNPP,
+                       optionsCaption: 'Chọn Nhà phân phối...',
+                       event: {change: product.selectChanged_NPP},
+                       attr:{'index':product.selectedNPP}"></select>
+
+        </td>
+        <td>
+            <select class="select" data-bind="
+                        options: product.listTableDvt,
+                       optionsText: 'Dvt',
+                       optionsValue:'Id',
+                       value: product.selectedDvt,
+                       optionsCaption: 'Chọn đơn vị...',
+                       event: {change: product.selectChanged_Dvt},
+                       attr:{'index':product.selectedDvt}"></select>
+        </td>
+        <td>
+            <input type="text" data-bind="value: soft_GiaM" class="input" />
+        </td>
+        <td>
+            <input type="text" data-bind="value: soft_GiaTC" class="input" />
+        </td>
+        <td class="low-padding align-center">
+            <input type="button" class="button compact icon-gear" value="Save" data-bind="click: function () { product.viewmodel().save($data); }" />
+            <input type="button" class="button compact icon-gear" value="Cancel" data-bind="click: function () {  product.viewmodel().reset(); }" />
+        </td>
+    </script>
+    <!--/ko-->
+    <div class="pageloading">
+        <span class="loader huge"></span>
+    </div>
+</div>

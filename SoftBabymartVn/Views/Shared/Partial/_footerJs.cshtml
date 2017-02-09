@@ -1,0 +1,122 @@
+﻿<!-- JavaScript at the bottom for fast page loading -->
+<!-- Scripts -->
+<script src="/Scripts/js/libs/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/plugin/bootstrap.js"></script>
+<script src="~/Scripts/knockout-2.2.0.js"></script>
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.2.1/knockout-min.js"></script>*@
+<script type="text/javascript" src="~/Scripts/tabs_dynamic.js"></script>
+<script src="~/Scripts/plugin/Utils.js"></script>
+<script src="/Scripts/js/setup.js"></script>
+<script src="~/Scripts/knockout.mapping-latest.js"></script>
+<!-- Template functions -->
+<script src="/Scripts/js/developr.input.js"></script>
+<script src="/Scripts/js/developr.message.js"></script>
+<script src="/Scripts/js/developr.modal.js"></script>
+<script src="/Scripts/js/developr.navigable.js"></script>
+<script src="/Scripts/js/developr.notify.js"></script>
+<script src="/Scripts/js/developr.scroll.js"></script>
+<script src="/Scripts/js/developr.progress-slider.js"></script>
+<script src="/Scripts/js/developr.confirm.js"></script>
+<script src="/Scripts/js/developr.agenda.js"></script>
+<script src="/Scripts/js/developr.tabs.js"></script>	
+<!-- Must be loaded last -->
+<!-- Plugins -->
+<script src="/Scripts/js/libs/jquery.tablesorter.min.js"></script>
+<script src="/Scripts/js/libs/DataTables/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/plugin/knockout_datatables.js"></script>
+<script src="~/Scripts/plugin/jquery.globalize/globalize.js"></script>
+<script src="~/Scripts/plugin/bindingHandlers.js"></script>
+<script src="~/Scripts/plugin/selectpicker/js/bootstrap-select.js"></script>
+<script src="~/Scripts/plugin/datepicker/bootstrap-datepicker.js"></script>
+<script>
+    $.template.init();
+    // Demo modal
+    function openModal() {
+        $.modal({
+            content: '<p>This is an example of modal window. You can open several at the same time (click links below!), move them and resize them.</p>' +
+                      '<p>The plugin provides several other functions to control them, try below:</p>' +
+                      '<ul class="simple-list with-icon">' +
+                      '    <li><a href="javascript:void(0)" onclick="openModal()">Open new blocking modal</a></li>' +
+                      '    <li><a href="javascript:void(0)" onclick="$.modal.alert(\'This is a non-blocking modal, you can switch between me and the other modal\', { blocker: false })">Open non-blocking modal</a></li>' +
+                      '    <li><a href="javascript:void(0)" onclick="$(this).getModalWindow().setModalTitle(\'\')">Remove title</a></li>' +
+                      '    <li><a href="javascript:void(0)" onclick="$(this).getModalWindow().setModalTitle(\'New title\')">Change title</a></li>' +
+                      '    <li><a href="javascript:void(0)" onclick="$(this).getModalWindow().loadModalContent(\'ajax-demo/auto-setup.html\')">Load Ajax content</a></li>' +
+                      '</ul>',
+            title: 'Example modal window',
+            width: 300,
+            scrolling: false,
+            actions: {
+                'Close': {
+                    color: 'red',
+                    click: function (win) { win.closeModal(); }
+                },
+                'Center': {
+                    color: 'green',
+                    click: function (win) { win.centerModal(true); }
+                },
+                'Refresh': {
+                    color: 'blue',
+                    click: function (win) { win.closeModal(); }
+                },
+                'Abort': {
+                    color: 'orange',
+                    click: function (win) { win.closeModal(); }
+                }
+            },
+            buttons: {
+                'Close': {
+                    classes: 'huge blue-gradient glossy full-width',
+                    click: function (win) { win.closeModal(); }
+                }
+            },
+            buttonsLowPadding: true
+        });
+    };
+
+    // Demo alert
+    function openAlert() {
+        $.modal.alert('This is an alert message', {
+            buttons: {
+                'Thanks, captain obvious': {
+                    classes: 'huge blue-gradient glossy full-width',
+                    click: function (win) { win.closeModal(); }
+                }
+            }
+        });
+    };
+
+    // Demo prompt
+    function openPrompt() {
+        var cancelled = false;
+
+        $.modal.prompt('Please enter a value between 5 and 10:', function (value) {
+            value = parseInt(value);
+            if (isNaN(value) || value < 5 || value > 10) {
+                $(this).getModalContentBlock().message('Please enter a correct value', { append: false, classes: ['red-gradient'] });
+                return false;
+            }
+
+            $.modal.alert('Value: <strong>' + value + '</strong>');
+
+        }, function () {
+            if (!cancelled) {
+                $.modal.alert('Oh, come on....');
+                cancelled = true;
+                return false;
+            }
+        });
+    };
+
+    // Demo confirm
+    function openConfirm() {
+        $.modal.confirm('Challenge accepted?', function () {
+            $.modal.alert('Me gusta!');
+
+        }, function () {
+            $.modal.alert('Meh.');
+        });
+    }
+  
+</script>

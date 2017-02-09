@@ -1,0 +1,75 @@
+﻿<script src="~/Scripts/module/DM/groupCustomer.js"></script>
+<script>
+    var groupCus = new GroupCustomer();
+    groupCus.Start();
+</script>
+<div id="groupCustomerViewId">
+    <fieldset class="fieldset">
+        <legend class="legend black-gradient">
+           Nhóm khách hàng
+        </legend>
+        <span class="button-group">
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-plus" data-bind="click: function () {  groupCus.viewmodel().addnewRecord(); }">Tạo mới</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-download">Xuất</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-outbox">Nhập</a>
+        </span>
+        <div class="table-responsive">
+            <table class="table table-bordered table-advance table-hover" id="DataTable_groupCus"
+                   data-bind="dataTable: {
+                              dataSource: groupCus.listTable,
+                              rowTemplate: 'readonlyTmp_groupCus',
+                              gridId: 'AssetGrid_groupCus',
+                              deferRender: true,
+                              columns:
+                                  [
+                                      {'name':'tennhom' },
+                                  ]
+                            }">
+                <thead>
+                    <tr>
+                        <th>Nhóm khách hàng</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </fieldset>
+
+    <script type="text/html" id="readonlyTmp_groupCus">
+        <!--ko template: { name: groupCus.viewmodel().currentTemplate} -->
+        <!--/ko-->
+    </script>
+    <script type="text/html" id="readonlyTemplate_groupCus">
+        <!--ko if: isNew==false -->
+        <!--ko template: { name: 'readTemplate_groupCus'} -->
+        <!--/ko-->
+        <!--/ko-->
+        <!--ko if: isNew==true -->
+        <!--ko template: { name: 'editTemplate_groupCus'} -->
+        <!--/ko-->
+        <!--/ko-->
+    </script>
+    <script type="text/html" id="editTemplate_groupCus">
+        <td>
+            <input type="text" data-bind="value: tennhom" class="input" />
+        </td>
+        <td class="low-padding align-center">
+            <input type="button" class="button compact icon-gear" value="Save" data-bind="click: function () { groupCus.viewmodel().save($data); }" />
+            <input type="button" class="button compact icon-gear" value="Cancel" data-bind="click: function () {  groupCus.viewmodel().reset(); }" />
+        </td>
+    </script>
+    <script type="text/html" id="readTemplate_groupCus">
+        <td>
+            <span data-bind="text: tennhom"></span>
+        <td>
+            <input type="button" class="button compact icon-gear" value="Edit" data-bind="click: function () { groupCus.viewmodel().editTemplate($data);}" />
+            <input type="button" class="button compact icon-gear" value="delete" data-bind="click: function () { groupCus.viewmodel().delete($data); }" />
+        </td>
+    </script>
+
+    <div class="pageloading">
+        <span class="loader huge"></span>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+﻿<script src="~/Scripts/module/CN/warehouse/m.warehouse.js"></script>
+<script src="~/Scripts/module/CN/warehouse/mv.warehouse.js"></script>
+<script>
+    var kho_product = new Warehouse.mvWarehouse();
+    kho_product.Start();
+</script>
+<div id="Kho_productViewId">
+    <fieldset class="fieldset">
+        <span class="button-group">
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-plus">Tạo mới</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-download">Xuất</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-outbox">Nhập</a>
+        </span>
+        <div class="table-responsive">
+            <table class="table table-bordered table-advance table-hover" id="DataTable_orderNPPList"
+                   data-bind="dataTable: {
+                              dataSource: ListOrderProduct,
+                              rowTemplate: 'readonlyTmp_orderNPPList',
+                              gridId: 'AssetGrid_orderNPPList',
+                              deferRender: true,
+                              columns:
+                                  [
+                                      {'name':'Id' },
+                                      {'name':'Kho'},
+                                      {'name':'TenNPP'},
+                                      {'name':'Total'},
+                                      {'name':'Date'},
+                                  ]
+                            }">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Kho</th>
+                        <th>Tên NPP</th>
+                        <th>Tổng cộng</th>
+                        <th>Ngày</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </fieldset>
+    <script type="text/html" id="readonlyTmp_orderNPPList">
+        <td><span data-bind="text: Id"></span></td>
+        <td><span data-bind="text: Kho"></span></td>
+        <td><span data-bind="text: TenNPP"></span></td>
+        <td><span data-bind="text: Total"></span></td>
+        <td><span data-bind="datelong: Date"></span>
+        </td>
+        <td>
+            <input type="button" class="button compact icon-gear" value="Edit" data-bind="click:kho_product.GetOrderProductDetail" />
+        </td>
+    </script>
+
+    <div class="pageloading">
+        <span class="loader huge"></span>
+    </div>
+</div>

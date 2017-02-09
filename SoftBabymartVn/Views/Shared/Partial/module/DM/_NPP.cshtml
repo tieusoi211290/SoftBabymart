@@ -1,0 +1,116 @@
+﻿<script src="~/Scripts/module/DM/NPP.js"></script>
+<script>
+    var npp = new NPP();
+    npp.Start();
+</script>
+<div id="nppViewId">
+    <fieldset class="fieldset">
+        <legend class="legend black-gradient">
+            Đơn vị tính
+        </legend>
+        <span class="button-group">
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-plus" data-bind="click: function () {  npp.viewmodel().addnewRecord(); }">Tạo mới</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-download">Xuất</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-outbox">Nhập</a>
+        </span>
+        <div class="table-responsive">
+            <table class="table table-bordered table-advance table-hover" id="DataTable_npp"
+                   data-bind="dataTable: {
+                              dataSource: npp.listTable,
+                              rowTemplate: 'readonlyTmp_npp',
+                              gridId: 'AssetGrid_npp',
+                              deferRender: true,
+                              columns:
+                                  [
+                                      {'name':'TenNPP' },
+                                      {'name':'Diachi' },
+                                      {'name':'Dienthoai' },
+                                      {'name':'Email' },
+                                      {'name':'Thue' },
+                                      {'name':'TkBank' }
+                                  ]
+                            }">
+                <thead>
+                    <tr>
+                        <th>Tên NPP</th>
+                        <th>Địa chỉ</th>
+                        <th>Điện thoại</th>
+                        <th>Email</th>
+                        <th>Mã số thuế</th>
+                        <th>Tài khoản ngân hàng</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </fieldset>
+
+    <script type="text/html" id="readonlyTmp_npp">
+        <!--ko template: { name: npp.viewmodel().currentTemplate} -->
+        <!--/ko-->
+    </script>
+    <script type="text/html" id="readonlyTemplate_npp">
+        <!--ko if: isNew==false -->
+        <!--ko template: { name: 'readTemplate_npp'} -->
+        <!--/ko-->
+        <!--/ko-->
+        <!--ko if: isNew==true -->
+        <!--ko template: { name: 'editTemplate_npp'} -->
+        <!--/ko-->
+        <!--/ko-->
+    </script>
+    <script type="text/html" id="editTemplate_npp">
+        <td>
+            <input type="text" data-bind="value: TenNPP" class="input" />
+        </td>
+        <td>
+            <input type="text" data-bind="value: Diachi" class="input" />
+        </td>
+        <td>
+            <input type="text" data-bind="value: Dienthoai" class="input" />
+        </td>
+        <td>
+            <input type="text" data-bind="value: Email" class="input" />
+        </td>
+        <td>
+            <input type="text" data-bind="value: Thue" class="input" />
+        </td>
+        <td>
+            <input type="text" data-bind="value: TkBank" class="input" />
+        </td>
+        <td class="low-padding align-center">
+            <input type="button" class="button compact icon-gear" value="Save" data-bind="click: function () { npp.viewmodel().save($data); }" />
+            <input type="button" class="button compact icon-gear" value="Cancel" data-bind="click: function () {  npp.viewmodel().reset(); }" />
+        </td>
+    </script>
+    <script type="text/html" id="readTemplate_npp">
+        <td>
+            <span data-bind="text: TenNPP"></span>
+        </td>
+        <td>
+            <span data-bind="text: Diachi"></span>
+        </td>
+        <td>
+            <span data-bind="text: Dienthoai"></span>
+        </td>
+        <td>
+            <span data-bind="text: Email"></span>
+        </td>
+        <td>
+            <span data-bind="text: Thue"></span>
+        </td>
+        <td>
+            <span data-bind="text: TkBank"></span>
+        </td>
+        <td>
+            <input type="button" class="button compact icon-gear" value="Edit" data-bind="click: function () { npp.viewmodel().editTemplate($data);}" />
+            <input type="button" class="button compact icon-gear" value="delete" data-bind="click: function () { npp.viewmodel().delete($data); }" />
+        </td>
+    </script>
+
+    <div class="pageloading">
+        <span class="loader huge"></span>
+    </div>
+</div>
