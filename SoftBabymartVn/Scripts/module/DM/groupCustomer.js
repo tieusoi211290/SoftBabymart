@@ -22,7 +22,7 @@ GroupCustomer = function () {
         editTemplate: ko.observable()
     };
     viewModel.currentTemplate = function (tmpl) {
-        return tmpl === this.editTemplate() ? 'editTemplate_groupCus' :
+        return tmpl === this.editTemplate() ? 'editTemplate_Kho_Order' :
          this.readonlyTemplate();
     }.bind(viewModel);
     viewModel.reset = function (t) {

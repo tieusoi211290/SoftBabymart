@@ -17,7 +17,7 @@ namespace SoftBabymartVn.Controllers
         }      
         public JsonResult GetList()
         {
-            var list = _context.soft_Kho.ToList();
+            var list = _context.soft_KHO.ToList();
             return Json(list, JsonRequestBehavior.AllowGet);
         }
 
@@ -32,8 +32,8 @@ namespace SoftBabymartVn.Controllers
 
             try
             {
-                var item = _context.soft_Kho.Find(id);
-                _context.soft_Kho.Remove(item);
+                var item = _context.soft_KHO.Find(id);
+                _context.soft_KHO.Remove(item);
                 _context.SaveChanges();
                 Messaging.success = true;
                 Messaging.messaging = "Xóa Kho tính thành công";
@@ -47,12 +47,12 @@ namespace SoftBabymartVn.Controllers
 
         }
         [HttpPost]
-        public JsonResult Add(soft_Kho model)
+        public JsonResult Add(soft_KHO model)
         {
             var Messaging = new RenderMessaging();
             try
             {
-                _context.soft_Kho.Add(model);
+                _context.soft_KHO.Add(model);
                 _context.SaveChanges();
                 Messaging.success = true;
                 Messaging.messaging = "Thêm Kho thành công";
@@ -65,12 +65,12 @@ namespace SoftBabymartVn.Controllers
             return Json(Messaging, JsonRequestBehavior.AllowGet);
         }
         [HttpPut]
-        public JsonResult Edit(soft_Kho model)
+        public JsonResult Edit(soft_KHO model)
         {
             var Messaging = new RenderMessaging();
             try
             {
-                var data = _context.soft_Kho.Find(model.Id);
+                var data = _context.soft_KHO.Find(model.Id);
                 _context.Entry(data).CurrentValues.SetValues(model);// = EntityState.Modified;
                 _context.SaveChanges();
                 Messaging.success = true;

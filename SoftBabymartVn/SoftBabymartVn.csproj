@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -182,6 +183,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\GroupProductController.cs" />
     <Compile Include="Controllers\KHOController.cs" />
+    <Compile Include="Controllers\KHO_OrderChildController.cs" />
+    <Compile Include="Controllers\KHO_OrderController.cs" />
+    <Compile Include="Controllers\KHO_ProductController.cs" />
     <Compile Include="Controllers\NPPController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\WarehouseController.cs" />
@@ -247,9 +251,12 @@
     </Compile>
     <Compile Include="Models\Module\GroupCustomerProductModel.cs" />
     <Compile Include="Models\Module\GroupProductModel.cs" />
+    <Compile Include="Models\Module\KHO_OrderModel.cs" />
     <Compile Include="Models\Module\KHO_ProductModel.cs" />
     <Compile Include="Models\Module\ProductModel.cs" />
     <Compile Include="Models\Module\RenderMessaging.cs" />
+    <Compile Include="Models\Module\shop_sanphamModel.cs" />
+    <Compile Include="Models\Module\T.cs" />
     <Compile Include="Models\module_detail.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -316,13 +323,19 @@
     <Compile Include="Models\soft_group_product.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\soft_Kho.cs">
+    <Compile Include="Models\soft_KHO.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\soft_KHO_Order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\soft_KHO_Order_Child.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\soft_KHO_Order_Input_Child.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\soft_KHO_Product.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\soft_KHO_Product_Detail.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\soft_NPP.cs">
@@ -338,9 +351,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\support_textlink.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sys_account_admin.cs">
@@ -400,10 +410,22 @@
     <Content Include="Content\css\styles\table.css" />
     <Content Include="Content\HtmlPage1.html" />
     <Content Include="Content\Test.html" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\knockout.mapping-latest.debug.js" />
     <Content Include="Scripts\knockout.mapping-latest.js" />
     <Content Include="Scripts\knockout.validation.debug.js" />
     <Content Include="Scripts\knockout.validation.js" />
+    <Content Include="Scripts\module\CN\kho\Kho_order\mv.kho_order_child.js" />
+    <Content Include="Scripts\module\CN\kho\Kho_order\mv.kho_order.js" />
     <Content Include="Scripts\module\CN\warehouse\mv.warehouse.js" />
     <Content Include="Scripts\module\CN\warehouse\mv.warehousrDetail.js" />
     <Content Include="Scripts\module\DM\dvt.js" />
@@ -557,18 +579,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <None Include="Properties\PublishProfiles\SoftBBM.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
@@ -1298,7 +1310,9 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1341,6 +1355,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\plugin\selectpicker\js\bootstrap-select.js.map" />
     <Content Include="Scripts\plugin\selectpicker\css\bootstrap-select.css.map" />
+    <Content Include="Views\Shared\Partial\module\CN\KHO\_Kho_Order.cshtml" />
+    <Content Include="Views\Shared\Partial\module\CN\KHO\_Kho_Product.cshtml" />
+    <Content Include="Views\Shared\Partial\module\CN\KHO\_Kho_Order_Clild.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

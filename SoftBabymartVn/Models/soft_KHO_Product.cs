@@ -14,18 +14,11 @@ namespace SoftBabymartVn.Models
     
     public partial class soft_KHO_Product
     {
-        public soft_KHO_Product()
-        {
-            this.soft_KHO_Product_Detail = new HashSet<soft_KHO_Product_Detail>();
-        }
-    
         public int Id { get; set; }
-        public int IdKho { get; set; }
-        public int IdNPP { get; set; }
-        public int Total { get; set; }
-        public System.DateTime Date { get; set; }
+        public int IdProduct { get; set; }
+        public int IdKHO { get; set; }
+        public int SL { get; set; }
+        public Nullable<System.DateTime> DateUpdate { get; set; }
         public string Note { get; set; }
-    
-        public virtual ICollection<soft_KHO_Product_Detail> soft_KHO_Product_Detail { get; set; }
     }
 }

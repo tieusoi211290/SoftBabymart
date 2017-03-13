@@ -16,7 +16,7 @@ namespace SoftBabymartVn.Models
     public partial class babymart_vnEntities : DbContext
     {
         public babymart_vnEntities()
-            : base("name=babymart_vnEntities")
+            : base("name=bbm_softEntities")
         {
         }
     
@@ -60,10 +60,12 @@ namespace SoftBabymartVn.Models
         public DbSet<soft_group_customer> soft_group_customer { get; set; }
         public DbSet<soft_group_customer_product> soft_group_customer_product { get; set; }
         public DbSet<soft_group_product> soft_group_product { get; set; }
-        public DbSet<soft_Kho> soft_Kho { get; set; }
-        public DbSet<soft_NPP> soft_NPP { get; set; }
+        public DbSet<soft_KHO> soft_KHO { get; set; }
+        public DbSet<soft_KHO_Order> soft_KHO_Order { get; set; }
+        public DbSet<soft_KHO_Order_Child> soft_KHO_Order_Child { get; set; }
+        public DbSet<soft_KHO_Order_Input_Child> soft_KHO_Order_Input_Child { get; set; }
         public DbSet<soft_KHO_Product> soft_KHO_Product { get; set; }
-        public DbSet<soft_KHO_Product_Detail> soft_KHO_Product_Detail { get; set; }
+        public DbSet<soft_NPP> soft_NPP { get; set; }
         public DbSet<support_cauhoi> support_cauhoi { get; set; }
         public DbSet<support_feedback> support_feedback { get; set; }
         public DbSet<support_silder> support_silder { get; set; }
@@ -75,7 +77,6 @@ namespace SoftBabymartVn.Models
         public DbSet<sys_tags_Summary> sys_tags_Summary { get; set; }
         public DbSet<sys_account_admin> sys_account_admin { get; set; }
         public DbSet<sys_bangtin_conhang> sys_bangtin_conhang { get; set; }
-        public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<sys_file> sys_file { get; set; }
         public DbSet<sys_imagetype> sys_imagetype { get; set; }
         public DbSet<sys_nhanbangtin> sys_nhanbangtin { get; set; }

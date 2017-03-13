@@ -108,4 +108,7 @@
             return Globalize.format(date, 'f');
         }
     },
+    url: function (path) {
+        return (location.origin + path);
+    },
 }

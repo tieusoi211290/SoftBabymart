@@ -546,6 +546,7 @@ input:-moz-placeholder {
 	padding: 20px;
 	border: 1px solid #cccccc;
 	margin-bottom: 16px;
+    display: inline-block;
 	-webkit-background-clip: padding-box;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;

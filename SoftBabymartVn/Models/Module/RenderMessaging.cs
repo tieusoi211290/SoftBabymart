@@ -9,5 +9,7 @@ namespace SoftBabymartVn.Models.Module
     {
         public bool success { get; set; }
         public string messaging { get; set; }
+        public Object Data { get; set; }
+     
     }
 }

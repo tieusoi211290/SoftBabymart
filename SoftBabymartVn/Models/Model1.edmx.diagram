@@ -4,88 +4,88 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="154c40c7418a4e2194458eb914509389" Name="Diagram1">
-        <EntityTypeShape EntityType="babymart_vnModel.admin" Width="1.5" PointX="9.75" PointY="4.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.admin_role" Width="1.5" PointX="10.75" PointY="0.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.cart" Width="1.5" PointX="9.75" PointY="22.125" />
-        <EntityTypeShape EntityType="babymart_vnModel.donhang" Width="1.5" PointX="7.5" PointY="30.375" />
-        <EntityTypeShape EntityType="babymart_vnModel.donhang_chuyenphat_tp_tinhtra" Width="1.5" PointX="9.75" PointY="10.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.donhang_ct" Width="1.5" PointX="9.75" PointY="18.875" />
-        <EntityTypeShape EntityType="babymart_vnModel.donhang_gio_giaohang" Width="1.5" PointX="11.75" PointY="3.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.donhang_chuyenphat_tinh" Width="1.5" PointX="5.25" PointY="37.875" />
-        <EntityTypeShape EntityType="babymart_vnModel.donhang_chuyenphat_tp" Width="1.5" PointX="3" PointY="33.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.donhang_chuyenphat_vung" Width="1.5" PointX="11.75" PointY="10.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.khachhang" Width="1.5" PointX="5.25" PointY="29.625" />
-        <EntityTypeShape EntityType="babymart_vnModel.khachhang_lienhe" Width="1.5" PointX="12.75" PointY="0.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.khachhang_vanglai" Width="1.5" PointX="5.25" PointY="33.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.module_detail" Width="1.5" PointX="16.25" PointY="13.25" />
-        <EntityTypeShape EntityType="babymart_vnModel.module_group" Width="1.5" PointX="14" PointY="14" />
-        <EntityTypeShape EntityType="babymart_vnModel.module_menu" Width="1.5" PointX="11.75" PointY="14" />
-        <EntityTypeShape EntityType="babymart_vnModel.shop_danhmuc_group" Width="1.5" PointX="12.75" PointY="6.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.shop_page" Width="1.5" PointX="14.75" PointY="0.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.shop_plan_saleoff" Width="1.5" PointX="14.75" PointY="6.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.shop_plan_type" Width="1.5" PointX="13.75" PointY="10.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.shop_showhome" Width="1.5" PointX="3" PointY="23.875" />
-        <EntityTypeShape EntityType="babymart_vnModel.shop_bienthe" Width="1.5" PointX="7.5" PointY="18.625" />
-        <EntityTypeShape EntityType="babymart_vnModel.shop_collection" Width="1.5" PointX="10.5" PointY="7.375" />
-        <EntityTypeShape EntityType="babymart_vnModel.shop_danhmuc" Width="1.5" PointX="3" PointY="5.875" />
-        <EntityTypeShape EntityType="babymart_vnModel.shop_danhmuccon" Width="1.5" PointX="5.25" PointY="5.5" />
-        <EntityTypeShape EntityType="babymart_vnModel.shop_image" Width="1.5" PointX="7.5" PointY="22.25" />
-        <EntityTypeShape EntityType="babymart_vnModel.shop_loai" Width="1.5" PointX="0.75" PointY="12.25" />
-        <EntityTypeShape EntityType="babymart_vnModel.shop_phanloai_dotuoi" Width="1.5" PointX="15.75" PointY="9.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.shop_rightcol" Width="1.5" PointX="16.75" PointY="0.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.shop_sanpham" Width="1.5" PointX="5.25" PointY="13.375" />
-        <EntityTypeShape EntityType="babymart_vnModel.shop_thuonghieu" Width="1.5" PointX="3" PointY="15.875" />
-        <EntityTypeShape EntityType="babymart_vnModel.soft_Dvt" Width="1.5" PointX="16.75" PointY="4.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.soft_group_customer" Width="1.5" PointX="17.75" PointY="7.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.soft_group_customer_product" Width="1.5" PointX="18.75" PointY="0.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.soft_group_product" Width="1.5" PointX="17.75" PointY="10.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.soft_Kho" Width="1.5" PointX="11.75" PointY="18.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.soft_NPP" Width="1.5" PointX="18.75" PointY="13.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.soft_KHO_Product" Width="1.5" PointX="5.75" PointY="1" />
-        <EntityTypeShape EntityType="babymart_vnModel.soft_KHO_Product_Detail" Width="1.5" PointX="8" PointY="1" />
-        <EntityTypeShape EntityType="babymart_vnModel.support_cauhoi" Width="1.5" PointX="7.5" PointY="7.25" />
-        <EntityTypeShape EntityType="babymart_vnModel.support_feedback" Width="1.5" PointX="13.75" PointY="18.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.support_silder" Width="1.5" PointX="3" PointY="12.5" />
-        <EntityTypeShape EntityType="babymart_vnModel.support_textlink" Width="1.5" PointX="3" PointY="20.625" />
-        <EntityTypeShape EntityType="babymart_vnModel.sys_Banner" Width="1.5" PointX="15.75" PointY="18.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.sys_content" Width="1.5" PointX="18.75" PointY="17.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.sys_mail" Width="1.5" PointX="19.75" PointY="5.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.sys_tags_Ref" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="babymart_vnModel.sys_tags_Summary" Width="1.5" PointX="0.75" PointY="1.25" />
-        <EntityTypeShape EntityType="babymart_vnModel.sys_account_admin" Width="1.5" PointX="19.75" PointY="8.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.sys_bangtin_conhang" Width="1.5" PointX="7.5" PointY="14.875" />
-        <EntityTypeShape EntityType="babymart_vnModel.sysdiagram" Width="1.5" PointX="20.75" PointY="0.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.sys_file" Width="1.5" PointX="20.75" PointY="11.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.sys_imagetype" Width="1.5" PointX="20.75" PointY="15.75" />
-        <EntityTypeShape EntityType="babymart_vnModel.sys_nhanbangtin" Width="1.5" PointX="5.25" PointY="25.75" />
-        <AssociationConnector Association="babymart_vnModel.FK_Cart_shop_bienthe" />
-        <AssociationConnector Association="babymart_vnModel.dh_ctDH" />
-        <AssociationConnector Association="babymart_vnModel.FK_KHHH_DH" />
-        <AssociationConnector Association="babymart_vnModel.fk_vanglai_dh" />
-        <AssociationConnector Association="babymart_vnModel.dh_sp" />
-        <AssociationConnector Association="babymart_vnModel.FK_donhang_chuyenphat_tinh_donhang_chuyenphat_tp" />
-        <AssociationConnector Association="babymart_vnModel.FK_nguoinhan_quan" />
-        <AssociationConnector Association="babymart_vnModel.FK_module_detail_module_group" />
-        <AssociationConnector Association="babymart_vnModel.FK_module_detail_module_menu" />
-        <AssociationConnector Association="babymart_vnModel.FK_module_group_module_menu" />
-        <AssociationConnector Association="babymart_vnModel.FK_shop_sanpham_shop_showhome" />
-        <AssociationConnector Association="babymart_vnModel.FK_bienthe_sanpham1" />
-        <AssociationConnector Association="babymart_vnModel.FK_collection_danhmuccon" />
-        <AssociationConnector Association="babymart_vnModel.FK_collection_sanpham" />
-        <AssociationConnector Association="babymart_vnModel.FK_danhmu_loai" />
-        <AssociationConnector Association="babymart_vnModel.FK_danhmuc_con" />
-        <AssociationConnector Association="babymart_vnModel.FK_maloai_nhanhieu" />
-        <AssociationConnector Association="babymart_vnModel.FK_image_sanpham" />
-        <AssociationConnector Association="babymart_vnModel.FK_maloai_Silder" />
-        <AssociationConnector Association="babymart_vnModel.FK_maloai_textlink223" />
-        <AssociationConnector Association="babymart_vnModel.FK_Thuonghieu_Loai" />
-        <AssociationConnector Association="babymart_vnModel.FK_bangtin_conhang_sanpham" />
-        <AssociationConnector Association="babymart_vnModel.FK_maloai_sanpham" />
-        <AssociationConnector Association="babymart_vnModel.FK_sp_ma_phanloai_nhanhieu" />
-        <AssociationConnector Association="babymart_vnModel.FK_soft_KHO_Product_Detail_soft_KHO_Product" />
-        <AssociationConnector Association="babymart_vnModel.FK_sys_tags_Ref_sys_tags_Summary" />
-        <AssociationConnector Association="babymart_vnModel.FK_bangtin_conhang_nhanbangtin" />
+      <Diagram DiagramId="e7b09ae2c7f244ac942c6ef5e38beec0" Name="Diagram1">
+        <EntityTypeShape EntityType="bbm_softModel.admin" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.admin_role" Width="1.5" PointX="2.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.cart" Width="1.5" PointX="12.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.donhang" Width="1.5" PointX="10.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.donhang_chuyenphat_tp_tinhtra" Width="1.5" PointX="12.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.donhang_ct" Width="1.5" PointX="12.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.donhang_gio_giaohang" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.donhang_chuyenphat_tinh" Width="1.5" PointX="8.25" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.donhang_chuyenphat_tp" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.donhang_chuyenphat_vung" Width="1.5" PointX="14.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.khachhang" Width="1.5" PointX="8.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.khachhang_lienhe" Width="1.5" PointX="16.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.khachhang_vanglai" Width="1.5" PointX="8.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.module_detail" Width="1.5" PointX="19.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.module_group" Width="1.5" PointX="17" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.module_menu" Width="1.5" PointX="14.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.shop_danhmuc_group" Width="1.5" PointX="15.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.shop_page" Width="1.5" PointX="17.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.shop_plan_saleoff" Width="1.5" PointX="18.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.shop_plan_type" Width="1.5" PointX="10.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.shop_showhome" Width="1.5" PointX="6" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.shop_bienthe" Width="1.5" PointX="10.5" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.shop_collection" Width="1.5" PointX="7.5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.shop_danhmuc" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.shop_danhmuccon" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.shop_image" Width="1.5" PointX="10.5" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.shop_loai" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.shop_phanloai_dotuoi" Width="1.5" PointX="19.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.shop_rightcol" Width="1.5" PointX="19.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.shop_sanpham" Width="1.5" PointX="8.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.shop_thuonghieu" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.soft_Dvt" Width="1.5" PointX="16.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.soft_group_customer" Width="1.5" PointX="18.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.soft_group_customer_product" Width="1.5" PointX="19.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.soft_group_product" Width="1.5" PointX="20.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.soft_KHO" Width="1.5" PointX="21.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.soft_KHO_Order" Width="1.5" PointX="21.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.soft_KHO_Order_Child" Width="1.5" PointX="21.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.soft_KHO_Order_Input_Child" Width="1.5" PointX="21.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.soft_KHO_Product" Width="1.5" PointX="13.75" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.soft_NPP" Width="1.5" PointX="21.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.support_cauhoi" Width="1.5" PointX="10.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.support_feedback" Width="1.5" PointX="21.75" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.support_silder" Width="1.5" PointX="3" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.support_textlink" Width="1.5" PointX="3" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.sys_Banner" Width="1.5" PointX="23.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.sys_content" Width="1.5" PointX="0.75" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.sys_mail" Width="1.5" PointX="2.75" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.sys_tags_Ref" Width="1.5" PointX="17" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.sys_tags_Summary" Width="1.5" PointX="14.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.sys_account_admin" Width="1.5" PointX="23.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.sys_bangtin_conhang" Width="1.5" PointX="13.5" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.sys_file" Width="1.5" PointX="4.75" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.sys_imagetype" Width="1.5" PointX="23.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbm_softModel.sys_nhanbangtin" Width="1.5" PointX="11.25" PointY="23" IsExpanded="true" />
+        <AssociationConnector Association="bbm_softModel.FK_Cart_shop_bienthe" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.dh_ctDH" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_KHHH_DH" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.fk_vanglai_dh" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.dh_sp" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_donhang_chuyenphat_tinh_donhang_chuyenphat_tp" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_nguoinhan_quan" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_module_detail_module_group" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_module_detail_module_menu" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_module_group_module_menu" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_shop_sanpham_shop_showhome" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_bienthe_sanpham1" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_collection_danhmuccon" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_collection_sanpham" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_danhmu_loai" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_danhmuc_con" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_maloai_nhanhieu" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_image_sanpham" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_maloai_Silder" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_maloai_textlink223" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_Thuonghieu_Loai" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_bangtin_conhang_sanpham" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_maloai_sanpham" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_sp_ma_phanloai_nhanhieu" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_sys_tags_Ref_sys_tags_Summary" ManuallyRouted="false" />
+        <AssociationConnector Association="bbm_softModel.FK_bangtin_conhang_nhanbangtin" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
