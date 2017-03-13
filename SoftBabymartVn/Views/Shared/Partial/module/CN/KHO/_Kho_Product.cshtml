@@ -1,0 +1,75 @@
+﻿<script src="~/Scripts/module/DM/dvt.js"></script>
+<script>
+    var kho_product = new Dvt();
+    kho_product.Start();
+</script>
+<div id="Kho_ProductViewId">
+    <fieldset class="fieldset">
+        <legend class="legend black-gradient">
+            Đơn vị tính
+        </legend>
+        <span class="button-group">
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-plus" data-bind="click: function () {  dvt.viewmodel().addnewRecord(); }">Tạo mới</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-download">Xuất</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-outbox">Nhập</a>
+        </span>
+        <div class="table-responsive">
+            <table class="table table-bordered table-advance table-hover" id="DataTable_dvt"
+                   data-bind="dataTable: {
+                              dataSource: dvt.listTable,
+                              rowTemplate: 'readonlyTmp_dvt',
+                              gridId: 'AssetGrid_dvt',
+                              deferRender: true,
+                              columns:
+                                  [
+                                      {'name':'Dvt' },
+                                  ]
+                            }">
+                <thead>
+                    <tr>
+                        <th>Dvt</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </fieldset>
+
+    <script type="text/html" id="readonlyTmp_dvt">
+        <!--ko template: { name: dvt.viewmodel().currentTemplate} -->
+        <!--/ko-->
+    </script>
+    <script type="text/html" id="readonlyTemplate_dvt">
+        <!--ko if: isNew==false -->
+        <!--ko template: { name: 'readTemplate_dvt'} -->
+        <!--/ko-->
+        <!--/ko-->
+        <!--ko if: isNew==true -->
+        <!--ko template: { name: 'editTemplate_dvt'} -->
+        <!--/ko-->
+        <!--/ko-->
+    </script>
+    <script type="text/html" id="editTemplate_dvt">
+        <td>
+            <input type="text" data-bind="value: Dvt" class="input" />
+        </td>
+        <td class="low-padding align-center">
+            <input type="button" class="button compact icon-gear" value="Save" data-bind="click: function () { dvt.viewmodel().save($data); }" />
+            <input type="button" class="button compact icon-gear" value="Cancel" data-bind="click: function () {  dvt.viewmodel().reset(); }" />
+        </td>
+    </script>
+    <script type="text/html" id="readTemplate_dvt">
+        <td>
+            <span data-bind="text: Dvt"></span>
+        <td>
+            <input type="button" class="button compact icon-gear" value="Edit" data-bind="click: function () { dvt.viewmodel().editTemplate($data);}" />
+            <input type="button" class="button compact icon-gear" value="delete" data-bind="click: function () { dvt.viewmodel().delete($data); }" />
+        </td>
+    </script>
+
+    <div class="pageloading">
+        <span class="loader huge"></span>
+    </div>
+</div>
