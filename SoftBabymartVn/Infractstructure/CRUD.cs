@@ -11,7 +11,7 @@ namespace SoftBabymartVn.Infractstructure
 {
     public class CRUD
     {
-        private babymart_vnEntities DbContext = new babymart_vnEntities();
+        public  babymart_vnEntities DbContext = new babymart_vnEntities();
         public virtual void Update<T>(T entity, params Expression<Func<T, object>>[] updatedProperties) where T : class
         {
             //dbEntityEntry.State = EntityState.Modified; --- I cannot do this.

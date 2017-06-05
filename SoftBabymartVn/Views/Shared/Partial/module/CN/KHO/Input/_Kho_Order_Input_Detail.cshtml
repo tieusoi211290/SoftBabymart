@@ -1,0 +1,62 @@
+﻿<script src="~/Scripts/module/CN/kho/kho_input/m.kho_order_input.js"></script>
+<script src="~/Scripts/module/CN/kho/kho_input/mv.kho_order_input.js"></script>
+<script>
+    var BagId = "@ViewBag.Id";
+    var kho_Order_input = new KHO_Order_Product.mvKHO_Order_Input();
+    kho_Order_input.StartDetail();
+</script>
+<div id="kho_Order_InputDetailViewId">
+   <fieldset class="fieldset">
+        <legend class="legend black-gradient">
+            Nhập hàng
+        </legend>
+        <div class="table-responsive">
+            <table class="table table-bordered table-advance table-hover">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Mã vạch</th>
+                        <th>Mã số</th>
+                        <th>Tên hàng</th>
+                        <th>Đv</th>
+                        <th>Số lượng nhập</th>
+                        <th>Giá nhập</th>
+                        <th>Thành tiền</th>
+                        <th>Ghi chú</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--ko foreach: mKHO_Input().soft_KHO_Order_Input_Child-->
+                    <tr>
+                        <td data-bind="text:($index() + 1)"></td>
+                        <td data-bind="text: barcode"></td>
+                        <td data-bind="text: masp"></td>
+                        <td data-bind="text: tensp"></td>
+                        <td data-bind="text: tendvt"></td>
+                        <td data-bind="text: Total_Input"></td>
+                        <td data-bind="text: Total_Money"></td>
+                        <td data-bind="text: Total"></td>
+                        <td data-bind="text: Note"></td>
+                    </tr>
+                    <!--/ko-->
+                    <tr>
+                        <td colspan="8" class="text-right">
+                            Tổng:
+                        </td>
+                        <td colspan="2" class="text-left" data-bind="text: Total"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="10">
+                            <b> Ghi chú:</b> <textarea data-bind="value: mKHO_Input().Note" class="width-auto"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </fieldset>
+   
+    <div class="pageloading">
+        <span class="loader huge"></span>
+    </div>
+</div>

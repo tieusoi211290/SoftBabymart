@@ -16,7 +16,7 @@ namespace SoftBabymartVn.Models
     public partial class babymart_vnEntities : DbContext
     {
         public babymart_vnEntities()
-            : base("name=bbm_softEntities")
+            : base("name=babymart_vnEntities")
         {
         }
     
@@ -25,60 +25,22 @@ namespace SoftBabymartVn.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<admin> admins { get; set; }
-        public DbSet<admin_role> admin_role { get; set; }
-        public DbSet<cart> carts { get; set; }
-        public DbSet<donhang> donhangs { get; set; }
-        public DbSet<donhang_chuyenphat_tp_tinhtra> donhang_chuyenphat_tp_tinhtra { get; set; }
-        public DbSet<donhang_ct> donhang_ct { get; set; }
-        public DbSet<donhang_gio_giaohang> donhang_gio_giaohang { get; set; }
-        public DbSet<donhang_chuyenphat_tinh> donhang_chuyenphat_tinh { get; set; }
-        public DbSet<donhang_chuyenphat_tp> donhang_chuyenphat_tp { get; set; }
-        public DbSet<donhang_chuyenphat_vung> donhang_chuyenphat_vung { get; set; }
-        public DbSet<khachhang> khachhangs { get; set; }
-        public DbSet<khachhang_lienhe> khachhang_lienhe { get; set; }
-        public DbSet<khachhang_vanglai> khachhang_vanglai { get; set; }
-        public DbSet<module_detail> module_detail { get; set; }
-        public DbSet<module_group> module_group { get; set; }
-        public DbSet<module_menu> module_menu { get; set; }
-        public DbSet<shop_danhmuc_group> shop_danhmuc_group { get; set; }
-        public DbSet<shop_page> shop_page { get; set; }
-        public DbSet<shop_plan_saleoff> shop_plan_saleoff { get; set; }
-        public DbSet<shop_plan_type> shop_plan_type { get; set; }
-        public DbSet<shop_showhome> shop_showhome { get; set; }
-        public DbSet<shop_bienthe> shop_bienthe { get; set; }
-        public DbSet<shop_collection> shop_collection { get; set; }
-        public DbSet<shop_danhmuc> shop_danhmuc { get; set; }
-        public DbSet<shop_danhmuccon> shop_danhmuccon { get; set; }
-        public DbSet<shop_image> shop_image { get; set; }
-        public DbSet<shop_loai> shop_loai { get; set; }
-        public DbSet<shop_phanloai_dotuoi> shop_phanloai_dotuoi { get; set; }
-        public DbSet<shop_rightcol> shop_rightcol { get; set; }
-        public DbSet<shop_sanpham> shop_sanpham { get; set; }
-        public DbSet<shop_thuonghieu> shop_thuonghieu { get; set; }
-        public DbSet<soft_Dvt> soft_Dvt { get; set; }
-        public DbSet<soft_group_customer> soft_group_customer { get; set; }
-        public DbSet<soft_group_customer_product> soft_group_customer_product { get; set; }
-        public DbSet<soft_group_product> soft_group_product { get; set; }
-        public DbSet<soft_KHO> soft_KHO { get; set; }
-        public DbSet<soft_KHO_Order> soft_KHO_Order { get; set; }
-        public DbSet<soft_KHO_Order_Child> soft_KHO_Order_Child { get; set; }
-        public DbSet<soft_KHO_Order_Input_Child> soft_KHO_Order_Input_Child { get; set; }
-        public DbSet<soft_KHO_Product> soft_KHO_Product { get; set; }
-        public DbSet<soft_NPP> soft_NPP { get; set; }
-        public DbSet<support_cauhoi> support_cauhoi { get; set; }
-        public DbSet<support_feedback> support_feedback { get; set; }
-        public DbSet<support_silder> support_silder { get; set; }
-        public DbSet<support_textlink> support_textlink { get; set; }
-        public DbSet<sys_Banner> sys_Banner { get; set; }
-        public DbSet<sys_content> sys_content { get; set; }
-        public DbSet<sys_mail> sys_mail { get; set; }
-        public DbSet<sys_tags_Ref> sys_tags_Ref { get; set; }
-        public DbSet<sys_tags_Summary> sys_tags_Summary { get; set; }
-        public DbSet<sys_account_admin> sys_account_admin { get; set; }
-        public DbSet<sys_bangtin_conhang> sys_bangtin_conhang { get; set; }
-        public DbSet<sys_file> sys_file { get; set; }
-        public DbSet<sys_imagetype> sys_imagetype { get; set; }
-        public DbSet<sys_nhanbangtin> sys_nhanbangtin { get; set; }
+        public DbSet<soft_Branches> soft_Branches { get; set; }
+        public DbSet<soft_Branches_Product_Stock> soft_Branches_Product_Stock { get; set; }
+        public DbSet<soft_Catalog> soft_Catalog { get; set; }
+        public DbSet<soft_Channel> soft_Channel { get; set; }
+        public DbSet<soft_Channel_Product_Price> soft_Channel_Product_Price { get; set; }
+        public DbSet<soft_Channel_Product_SaleTotal> soft_Channel_Product_SaleTotal { get; set; }
+        public DbSet<soft_Customer> soft_Customer { get; set; }
+        public DbSet<soft_Order> soft_Order { get; set; }
+        public DbSet<soft_Order_Child> soft_Order_Child { get; set; }
+        public DbSet<soft_Product> soft_Product { get; set; }
+        public DbSet<soft_Product_Variant> soft_Product_Variant { get; set; }
+        public DbSet<soft_Suppliers> soft_Suppliers { get; set; }
+        public DbSet<soft_Unit> soft_Unit { get; set; }
+        public DbSet<sys_Employee> sys_Employee { get; set; }
+        public DbSet<sys_Employee_Role> sys_Employee_Role { get; set; }
+        public DbSet<sys_Role> sys_Role { get; set; }
+        public DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

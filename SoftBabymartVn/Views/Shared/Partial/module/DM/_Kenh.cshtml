@@ -1,0 +1,70 @@
+﻿<script src="~/Scripts/module/DM/KENH.js"></script>
+<script>
+    var kenh = new KENH.mvKENH();
+
+    $(document).ready(function () {
+        kenh.Start();
+    });
+</script>
+<div id="kenhViewId">
+    <fieldset class="fieldset">
+        <legend class="legend black-gradient">
+            Kênh bán hàng
+        </legend>
+        <span class="button-group">
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-download">Xuất</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-outbox">Nhập</a>
+        </span>
+        <div class="table-responsive">
+            <table  class="table table-striped table-bordered table-hover" id="DataTable_dvt"
+                   data-bind="dataTable: {
+                              dataSource: lstKenh,
+                              rowTemplate: 'Tmp_kenh',
+                              gridId: 'AssetGrid_kenh',
+                              deferRender: true,
+                              columns:
+                                  [
+                                      {'name':'Kenh' },
+                                  ]
+                            }">
+                <thead>
+                    <tr>
+                        <th>Kênh</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <script type="text/html" id="Tmp_kenh">
+            <!--ko if: !IsEdit() -->
+            <!--ko template: { name: 'readTemplate_kenh'} --> <!--/ko-->
+            <!--/ko-->
+            <!--ko if: IsEdit -->
+            <!--ko template: { name: 'editTemplate_kenh'} --> <!--/ko-->
+            <!--/ko-->
+        </script>
+        <script type="text/html" id="readTemplate_kenh">
+            <td>
+                <span data-bind="text: Kenh"></span>
+            </td>
+            <td>
+                <input type="button" class="button compact icon-gear" data-bind="click: kenh.ChangeEdit, attr:{'value':!IsEdit()? 'Sửa' : 'Lưu' }" />
+                <!--ko if: Id()-->
+                <input type="button" class="button compact icon-gear" value="Xóa" data-bind="click: kenh.Remove" />
+                <!--/ko-->
+            </td>
+        </script>
+        <script type="text/html" id="editTemplate_kenh">
+            <td>
+                <input data-bind="value: Kenh" class="input" />
+            <td>
+                <input type="button" class="button compact icon-gear" value="Lưu" data-bind="click: kenh.SaveChange" />
+                <!--ko if: Id()-->
+                <input type="button" class="button compact icon-gear" value="Hủy" data-bind="click: kenh.CancleChangeEdit" />
+                <input type="button" class="button compact icon-gear" value="Xóa" data-bind="click: kenh.Remove" />
+                <!--/ko-->
+            </td>
+        </script>
+    </fieldset>
+</div>

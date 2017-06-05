@@ -1,0 +1,124 @@
+﻿<script src="~/Scripts/module/SYS/Officers.js"></script>
+<script>
+    var officers = new Officers.mvOfficers();
+    $(document).ready(function () {
+        officers.Start();
+    });
+</script>
+<div id="officerViewId">
+    <fieldset class="fieldset">
+        <legend class="legend black-gradient">
+            Danh sách  Nhân viên
+        </legend>
+        <div class="twelve-columns twelve-columns-tablet twelve-columns-mobile  margin-bottom">
+            <!--ko if: mOfficers-->
+            <fieldset class="fieldset twelve-columns  margin-bottom" data-bind="with: mOfficers">
+                <legend class="legend">Thông tin nhân viên</legend>
+                <p class="inline-label">
+                    <label for="input-1" class="label">Email</label>
+                    <input type="text" class="input full-width" data-bind="value: Email, enable: Id()?false:true">
+                </p>
+                <p class="inline-label">
+                    <label for="input-1" class="label">Mã nhân viên</label>
+                    <input type="text" class="input full-width" data-bind="value: MaNV">
+                </p>
+                <p class="inline-label">
+                    <label for="input-1" class="label">Nhân viên</label>
+                    <input type="text" class="input full-width" data-bind="value: TenNv">
+                </p>
+                <p class="inline-label">
+                    <label for="input-1" class="label">Sđt</label>
+                    <input type="text" class="input full-width" data-bind="value: Sdt">
+                </p>
+                <p class="inline-label">
+                    <label for="input-1" class="label">Địa chỉ</label>
+                    <input type="text" class="input full-width" data-bind="value: Diachi">
+                </p>
+                <p class="inline-label">
+                    <label for="input-1" class="label">Cửa hàng</label>
+                    <select class="input p-10" data-bind="options: officers.lstKHO,
+                       optionsText: 'Kho',
+                       optionsValue:'Id',
+                       value: IdKho"></select>
+                </p>
+                <fieldset class="fieldset ten-columns">
+                    <legend class="legend">Nhóm quyền</legend>
+                    <ul data-bind="foreach:  RoleNv()" style="list-style:none">
+                        <li>
+                            <input type="checkbox" data-bind="value: Id, checked: IsCheck">
+                            <span data-bind="text: Role"></span>
+                        </li>
+                    </ul>
+                </fieldset>
+                <div class="field-block button-height">
+
+                    <button type="submit" class="button glossy mid-margin-right" data-bind="click: $parent.SaveChange">
+                        <span class="button-icon"><span class="icon-tick"></span></span>
+                        Save
+                    </button>
+
+                    <button type="submit" class="button glossy" data-bind="click: $parent.Cancel">
+                        <span class="button-icon red-gradient"><span class="icon-cross-round"></span></span>
+                        Cancel
+                    </button>
+
+                </div>
+            </fieldset>
+            <!--/ko-->
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-advance table-hover" id="DataTable_office"
+                   data-bind="dataTable: {
+                              dataSource: lstOfficers,
+                              rowTemplate: 'Tmp_Officers',
+                              gridId: 'AssetGrid_Role',
+                              deferRender: true,
+                              columns:
+                                  [   {'name':'Email' },
+                                      {'name':'TenNv' },
+                                      {'name':'Sdt' },
+                                      {'name':'Diachi' },
+                                      {'name':'MaNV' },
+                                      {'name':'Kho' }
+                                  ]
+                            }">
+                <thead>
+                    <tr>
+                        <th>Mã NV</th>
+                        <th>Email</th>
+                        <th>Nhân viên</th>
+                        <th>Kho</th>
+                        <th>Sđt</th>
+                        <th>Địa chỉ</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <script type="text/html" id="Tmp_Officers">
+            <td>
+                <span data-bind="text: MaNV"></span>
+            </td>
+            <td>
+                <span data-bind="text: Email"></span>
+            </td>
+            <td>
+                <span data-bind="text: TenNv"></span>
+            </td>
+            <td>
+                <span data-bind="text: Kho"></span>
+            </td>
+            <td>
+                <span data-bind="text: Sdt"></span>
+            </td>
+            <td>
+                <span data-bind="text: Diachi"></span>
+            </td>
+            <td>
+                <input type="button" class="button compact icon-gear" data-bind="click: officers.Detail" value="Xem" />
+            </td>
+        </script>
+    </fieldset>
+</div>

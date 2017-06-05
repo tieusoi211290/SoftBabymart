@@ -1,0 +1,67 @@
+﻿<script src="~/Scripts/module/plugin/_FilterProduct.js"></script>
+<script src="~/Scripts/module/plugin/_TableTool.js"></script>
+<script src="~/Scripts/module/Product_Channel/m.Channel_Product.js"></script>
+<script src="~/Scripts/module/Product_Channel/mv.Channel_Product_Add.js"></script>
+@Html.Partial("~/Views/Shared/Partial/module/Partial/_TableTool.cshtml")
+@Html.Partial("~/Views/Shared/Partial/module/Partial/_FilterProduct.cshtml")
+<script>
+    var channel_product_add = new Channel.mvChannel_Product_Add();
+    $(document).ready(function () {
+        channel_product_add.Start();
+    });
+</script>
+<div id="channel_product_addViewId" class="row-fluid">
+    <div class="span2">
+        <!--ko template: {name: '_FilterProduct', data:channel_product_add.FilterProduct } --><!--/ko-->
+    </div>
+    <div class="span10">
+        <div id="channel_productViewId">
+            <div class="row-fluid">
+                <h3 class="header smaller lighter blue">jQuery dataTables</h3>
+                <div class="table-header">
+                    Results for "Latest Registered Domains"
+                </div>
+                <!--ko template: {name: 'dataTables', data:channel_product_add.TmpTable } --><!--/ko-->
+            </div>
+        </div>
+        <script id="table_Products" type="text/html">
+            <thead>
+                <tr>
+                    <th class="sorting" data-bind="click: function(){ Sortby('Barcode'); SortbyDesc(SortbyDesc()?false:true)}">Barcode</th>
+                    <th class="sorting" data-bind="click: function(){ Sortby('Code'),SortbyDesc(SortbyDesc()?false:true)}">Mã sp</th>
+                    <th class="sorting" data-bind="click: function(){ Sortby('ProductName'),SortbyDesc(SortbyDesc()?false:true)}">Sp</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--ko foreach: listData() -->
+                <tr class="odd">
+                    <td>
+                        <span data-bind="text: Barcode"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: Code"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: ProductName"></span>
+                    </td>
+                    <td>
+                        <!--ko if: HasInChannel-->
+                        <span class="btn-mini btn-warning">
+                            <i class="icon-check bigger-120"></i>
+                        </span>
+                        <!-- /ko -->
+                        <!--ko if: !HasInChannel()-->
+                        <button class="btn btn-mini btn-success" data-bind="click: $parents[1].AddProductIntoChannel">
+                            <i class="icon-plus bigger-120"></i>
+                        </button>
+                        <!-- /ko -->
+                    </td>
+                </tr>
+                <!--/ko-->
+            </tbody>
+        </script>
+
+    </div>
+</div>
+

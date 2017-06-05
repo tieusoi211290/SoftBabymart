@@ -30,7 +30,8 @@ namespace SoftBabymartVn.Controllers
         }
         public JsonResult GetListChild(int id)
         {
-            var list = Mapper.Map<List<KHO_Order_ChildModel>>(_context.soft_KHO_Order_Child.Where(o => o.IdOrder == id).ToList());
+            var list = Mapper.Map<List<KHO_Order_ChildModel>>(
+                _context.soft_KHO_Order_Child.Where(o => o.IdOrder == id).ToList());
             foreach (var item in list)
             {
                 if (item.IdNPP > 0)
@@ -45,7 +46,7 @@ namespace SoftBabymartVn.Controllers
                     if (product != null)
                         item.product = Mapper.Map<ModelPropetiesProduct>(product);
                 }
-            }        
+            }
             return Json(list, JsonRequestBehavior.AllowGet);
         }
         [HttpDelete]

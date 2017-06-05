@@ -94,6 +94,13 @@ KHO = function () {
             });
         };
     };
+    viewmodel.review = function (val) {
+        if (val.Id) {
+            Utils.addTabDynamic('KHO - ' + val.Kho, Utils.url('/KHO_Product/RenderView?idKho=' + val.Id), '#contentX');
+        }
+        else
+            Utils.notify("Thông báo", 'Dữ liệu không hợp lệ');
+    };
     self.viewmodel = ko.observable(viewmodel);
     self.Start = function () {
         loadList();

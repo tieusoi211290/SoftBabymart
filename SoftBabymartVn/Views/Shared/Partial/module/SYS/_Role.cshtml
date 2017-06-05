@@ -1,0 +1,70 @@
+﻿<script src="~/Scripts/module/SYS/Role.js"></script>
+<script>
+    var role = new Role.mvRole();
+
+    $(document).ready(function () {
+        role.Start();
+    });
+</script>
+<div id="roleViewId">
+    <fieldset class="fieldset">
+        <legend class="legend black-gradient">
+            Nhóm quyền
+        </legend>
+        <span class="button-group">
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-download">Xuất</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-outbox">Nhập</a>
+        </span>
+        <div class="table-responsive">
+            <table class="table table-bordered table-advance table-hover" id="DataTable_role"
+                   data-bind="dataTable: {
+                              dataSource: lstRole,
+                              rowTemplate: 'Tmp_Role',
+                              gridId: 'AssetGrid_Role',
+                              deferRender: true,
+                              columns:
+                                  [
+                                      {'name':'Role' },
+                                  ]
+                            }">
+                <thead>
+                    <tr>
+                        <th>Quyền</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <script type="text/html" id="Tmp_Role">
+            <!--ko if: !IsEdit() -->
+            <!--ko template: { name: 'readTemplate_role'} --> <!--/ko-->
+            <!--/ko-->
+            <!--ko if: IsEdit -->
+            <!--ko template: { name: 'editTemplate_role'} --> <!--/ko-->
+            <!--/ko-->
+        </script>
+        <script type="text/html" id="readTemplate_role">
+            <td>
+                <span data-bind="text: Role"></span>
+            </td>
+            <td>
+                <input type="button" class="button compact icon-gear" data-bind="click: role.ChangeEdit, attr:{'value':!IsEdit()? 'Sửa' : 'Lưu' }" />
+                <!--ko if: Id()-->
+                <input type="button" class="button compact icon-gear" value="Xóa" data-bind="click: role.Remove" />
+                <!--/ko-->
+            </td>
+        </script>
+        <script type="text/html" id="editTemplate_role">
+            <td>
+                <input data-bind="value: Role" class="input" />
+            <td>
+                <input type="button" class="button compact icon-gear" value="Lưu" data-bind="click: role.SaveChange" />
+                <!--ko if: Id()-->
+                <input type="button" class="button compact icon-gear" value="Hủy" data-bind="click: role.CancleChangeEdit" />
+                <input type="button" class="button compact icon-gear" value="Xóa" data-bind="click: role.Remove" />
+                <!--/ko-->
+            </td>
+        </script>
+    </fieldset>
+</div>

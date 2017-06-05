@@ -1,0 +1,32 @@
+﻿<script src="~/Scripts/module/CN/kho/kho_inside/m.kho_order_inside.js"></script>
+<script src="~/Scripts/module/CN/kho/kho_inside/mv.kho_order_inside.js"></script>
+<script>
+    var kho_Order_inside = new KHO_Order_Product.mvKHO_Order_Inside();
+    kho_Order_inside.Start();
+</script>
+@Html.Partial("~/Views/Shared/Partial/module/CN/KHO/Inside/_Kho_Order_Inside_Story.cshtml")
+@Html.Partial("~/Views/Shared/Partial/module/CN/KHO/Inside/_Kho_Order_Inside_Get.cshtml")
+@Html.Partial("~/Views/Shared/Partial/module/CN/KHO/Inside/_Kho_Order_Inside_Print.cshtml")
+<div id="kho_Order_InsideViewId">
+    <div class="col-md-12 m-b10">
+        <span class="button-group">
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-download" data-bind="click: function(){ IsOrdering(true)} ">Nhập hàng</a>
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-outbox" data-bind="click: function(){ IsOrdering(false)}">Xem danh sách</a>
+        </span>
+    </div>
+    <!--ko if: IsOrdering-->
+    <!--ko template: { name: 'readonlyTemplate_kho_Order_Inside_Get' }--><!--/ko-->
+    <!--ko if: IsPrintOrdering -->
+    <h3 class="thin">Phiếu đặt hàng</h3>
+    <!--ko foreach:listPrintOrder -->
+    <!--ko template: { name: 'readonlyTemplate_kho_Order_Inside_Print' , data: $data}--><!--/ko-->
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- /ko -->
+    <!--ko if: !IsOrdering()--> 
+    <!--ko template: { name: 'readonlyTemplate_kho_Order_Inside_Story' }--><!--/ko-->
+   <!-- /ko -->
+    <div class="pageloading">
+        <span class="loader huge"></span>
+    </div>   
+</div>

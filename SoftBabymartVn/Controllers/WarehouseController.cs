@@ -65,7 +65,7 @@ namespace SoftBabymartVn.Controllers
         //    }
         //    catch
         //    {
-        //        Messaging.success = false;
+        //        Messaging.isError = true;
         //        Messaging.messaging = "Do sự cố mạng vui lòng thử lại.";
         //    }
         //    return Json(Messaging, JsonRequestBehavior.AllowGet);
@@ -92,7 +92,7 @@ namespace SoftBabymartVn.Controllers
         //    }
         //    catch
         //    {
-        //        Messaging.success = false;
+        //        Messaging.isError = true;
         //        Messaging.messaging = "Do sự cố mạng vui lòng thử lại.";
         //    }
         //    return Json(Messaging, JsonRequestBehavior.AllowGet);

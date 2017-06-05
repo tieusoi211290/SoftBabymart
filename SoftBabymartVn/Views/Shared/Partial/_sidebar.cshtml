@@ -1,0 +1,155 @@
+﻿<div class="sidebar" id="sidebar">
+    <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+        <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+            <button class="btn btn-small btn-success">
+                <i class="icon-signal"></i>
+            </button>
+
+            <button class="btn btn-small btn-info">
+                <i class="icon-pencil"></i>
+            </button>
+
+            <button class="btn btn-small btn-warning">
+                <i class="icon-group"></i>
+            </button>
+
+            <button class="btn btn-small btn-danger">
+                <i class="icon-cogs"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+            <span class="btn btn-success"></span>
+
+            <span class="btn btn-info"></span>
+
+            <span class="btn btn-warning"></span>
+
+            <span class="btn btn-danger"></span>
+        </div>
+    </div><!--#sidebar-shortcuts-->
+
+    <ul class="nav nav-list">
+        <li class="active">
+            <a href="index.html">
+                <i class="icon-dashboard"></i>
+                <span> Dashboard </span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-tag"></i>
+                <span>Hàng hóa</span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+              
+                <li>
+                    <a href="javascript:void(0)" onclick="Utils.addTabDynamic('Chỉnh giá kênh bán hàng', '@Url.Content("~/KENH_Product/RenderView")', '#contentX')">Chỉnh giá kênh bán hàng</a>
+                </li>
+               
+                <li>
+                    <a href="javascript:void(0)" onclick="Utils.addTabDynamic('Sản phẩm', '@Url.Content("~/Product/RenderView")', '#contentX')">Sản phẩm</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" onclick="Utils.addTabDynamic('Đơn giá hàng hóa', '@Url.Content("~/GroupCustomer_Product/RenderView")', '#contentX')">Đơn giá hàng hóa</a>
+                </li>
+
+               
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-tag"></i>
+                <span> Giao dịch </span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="javascript:void(0)" onclick="Utils.addTabDynamic('Danh sách đặt hàng', '@Url.Content("~/KHO_Order/RenderView")','#contentX')">
+                        Đặt hàng
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" onclick="Utils.addTabDynamic('Danh sách nhập hàng', '@Url.Content("~/KHO_OrderInput/RenderView")','#contentX')">
+                        Nhập hàng
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" onclick="Utils.addTabDynamic('Xuất hàng nội bộ', '@Url.Content("~/KHO_OrderInput/RenderViewInside")','#contentX')">
+                        Xuất hàng nội bộ
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-tag"></i>
+                <span> Đối tác </span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="javascript:void(0)" onclick="Utils.addTabDynamic('Nhóm khách hàng', '@Url.Content("~/GroupCustomer/RenderView")', '#contentX')">
+                        Nhóm khách hàng
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" onclick="Utils.addTabDynamic('Nhà phân phối', '@Url.Content("~/NPP/RenderView")', '#contentX')">
+                        Nhà phân phối
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-tag"></i>
+                <span>Thiết lập</span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="javascript:void(0)" onclick="Utils.addTabDynamic('Đơn vị tính', '@Url.Content("~/Dvt/RenderView")', '#contentX')">Đơn vị tính</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" onclick="Utils.addTabDynamic('Nhóm hàng hóa', '@Url.Content("~/GroupProduct/RenderView")', '#contentX')">Nhóm hàng hóa</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" onclick="Utils.addTabDynamic('Kho hàng', '@Url.Content("~/KHO/RenderView")', '#contentX')">Kho hàng</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" onclick="Utils.addTabDynamic('Kênh bán hàng', '@Url.Content("~/KENH/RenderView")', '#contentX')">Kênh bán hàng</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-tag"></i>
+                <span> Quản lý nhân viên </span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+                <li>
+                    <a href="javascript:void(0)" onclick="Utils.addTabDynamic('Danh sách nhóm quyền', '@Url.Content("~/SYS_Role/RenderView")','#contentX')">Nhóm quyên</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" onclick="Utils.addTabDynamic('Danh sách nhân viên', '@Url.Content("~/SYS_Officers/RenderView")','#contentX')">Nhân viên</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="sidebar-collapse" id="sidebar-collapse">
+        <i class="icon-double-angle-left"></i>
+    </div>
+</div>

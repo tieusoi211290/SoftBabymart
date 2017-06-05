@@ -5,73 +5,121 @@ using System.Linq;
 using AutoMapper;
 using SoftBabymartVn.Models.Module;
 using SoftBabymartVn.Models;
+using SoftBabymartVn.Infractstructure.Security;
+using SoftBabymartVn.Models.Enum;
+
 namespace SoftBabymartVn.Infractstructure
 {
     public static class Mappers
     {
         public static void Boot()
         {
-            babymart_vnEntities _context = new babymart_vnEntities();
-            Mapper.CreateMap<shop_sanpham, ProductModel>();
-            Mapper.CreateMap<ProductModel, shop_sanpham>();
-            Mapper.CreateMap<shop_sanpham, ModelPropetiesProduct>();
-            Mapper.CreateMap<ModelPropetiesProduct, shop_sanpham>();
-            Mapper.CreateMap<soft_group_product, GroupProductModel>();
-            Mapper.CreateMap<GroupProductModel, soft_group_product>();
-            Mapper.CreateMap<soft_group_customer_product, GroupCustomerProductModel>();
-            Mapper.CreateMap<GroupCustomerProductModel, soft_group_customer_product>();
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<ChannelModel, soft_Channel>();
+                cfg.CreateMap<soft_Channel, ChannelModel>();
 
-            Mapper.CreateMap<KHO_OrderModel, soft_KHO_Order>();
-            Mapper.CreateMap<soft_KHO_Order, KHO_OrderModel>();
+                cfg.CreateMap<Channel_Product_PriceModel, soft_Channel_Product_Price>();
+                cfg.CreateMap<soft_Channel_Product_Price, Channel_Product_PriceModel>();
 
-            Mapper.CreateMap<KHO_Order_ChildModel, soft_KHO_Order_Child>();
-            Mapper.CreateMap<soft_KHO_Order_Child, KHO_Order_ChildModel>();
+                cfg.CreateMap<soft_Channel_Product_Price, Product_PriceModel>();
+                cfg.CreateMap<soft_Branches_Product_Stock, Product_StockModel>();
 
 
-            // Mapper.CreateMap<soft_KHO_Product, KHO_ProductModel>()
-            //.ForMember(p => p.Kho, o => o.ResolveUsing(p =>
-            //{
-            //    var kho = _context.soft_Kho.Find(p.IdKho);
-            //    if (kho != null)
-            //        return kho.Kho;
-            //    return string.Empty;
-            //}))
-            // .ForMember(p => p.TenNPP, o => o.ResolveUsing(p =>
-            // {
-            //     var npp = _context.soft_NPP.Find(p.IdNPP);
-            //     if (npp != null)
-            //         return npp.TenNPP;
-            //     return string.Empty;
-            // }))
-            // .ForMember(p => p.ItemsKHO_Product_DetailModel, o => o.ResolveUsing(p =>
-            // {
-            //     List<KHO_Product_DetailModel> lstTmp = new List<KHO_Product_DetailModel>();
-            //     foreach (var item in p.soft_KHO_Product_Detail)
-            //     {
-            //         var product = _context.shop_sanpham.Find(item.IdProduct);
-            //         if (product != null)
-            //         {
-            //             var itemTmp = new KHO_Product_DetailModel
-            //             {
-            //                 Id = item.Id,
-            //                 Id_kho_product = item.Id_kho_product,
-            //                 IdProduct = item.IdProduct,
-            //                 SL = item.SL,
-            //                 Price = item.Price,
-            //                 masp = product.masp,
-            //                 soft_Barcode = product.soft_Barcode != null ? product.soft_Barcode : string.Empty,
-            //                 soft_GiaM = product.soft_GiaM != null ? product.soft_GiaM.Value : 0,
-            //                 tensp = product.tensp
-            //             };
-            //             lstTmp.Add(itemTmp);
-            //         }
-            //     }
-            //     return lstTmp;
-            // }));
-            //Mapper.CreateMap<KHO_ProductModel, soft_KHO_Product>();
+                cfg.CreateMap<soft_Branches, BranchesModel>();
 
-            //Mapper.CreateMap<soft_KHO_Product_Detail, KHO_Product_DetailModel>();
-            //Mapper.CreateMap<KHO_Product_DetailModel, soft_KHO_Product_Detail>();
+                cfg.CreateMap<BranchesModel, soft_Branches>();
+
+                cfg.CreateMap<soft_Order, OrderModel>()
+                .ForMember(a => a.Detail, b => b.MapFrom(c => c.soft_Order_Child))
+                 .ForMember(a => a.StatusName, b => b.ResolveUsing(c =>
+                 {
+                     if (c.TypeOrder == (int)TypeOrder.Sale)
+                     {
+                         switch (c.Status)
+                         {
+                             case (int)StatusOrderSale.Done:
+                                 return "Done";
+                             case (int)StatusOrderSale.Shipped:
+                                 return "Shipped";
+                             default:
+                                 return "Pending";
+                         }
+                     }
+                     else
+                     {
+                         switch (c.Status)
+                         {
+                             case (int)StatusOrderProduct.Done:
+                                 return "Done";
+                             default:
+                                 return "Pending";
+                         }
+                     }
+
+                     return null;
+                 }));
+                //.ForMember(a => a.ChannelsFrom, b => b.ResolveUsing(c =>
+                //{
+                //    if (c.Id_From.HasValue)
+                //    {
+                //        return new ChannelModel
+                //        {
+                //            Id = (int)c.Id_From.Value,
+                //            Channel = c.soft_Channel.Channel
+                //        };
+                //    }
+                //    return null;
+                //}))
+                //  .ForMember(a => a.ChannelsTo, b => b.ResolveUsing(c =>
+                //  {
+                //      if (c.Id_To.HasValue)
+                //      {
+                //          return new ChannelModel
+                //          {
+                //              Id = (int)c.Id_To.Value,
+                //              Channel = c.soft_Channel1.Channel
+                //          };
+                //      }
+                //      return null;
+                //  }));
+                cfg.CreateMap<soft_Order_Child, Order_DetialModel>()
+                .ForMember(a => a.Product, b => b.MapFrom(c => c.soft_Product));
+
+
+                cfg.CreateMap<OrderModel, soft_Order>()
+                 .ForMember(a => a.soft_Order_Child, b => b.MapFrom(c => c.Detail));
+
+                cfg.CreateMap<Order_DetialModel, soft_Order_Child>();
+
+                cfg.CreateMap<soft_Product, ProductSampleModel>();
+                cfg.CreateMap<ProductSampleModel, soft_Product>();
+
+                cfg.CreateMap<RoleModel, sys_Role>();
+                cfg.CreateMap<sys_Role, RoleModel>();
+
+
+                cfg.CreateMap<sys_Employee_Role, Employee_RoleModel>();
+                cfg.CreateMap<Employee_RoleModel, sys_Employee_Role>();
+
+
+                cfg.CreateMap<EmployeeModel, sys_Employee>();
+                cfg.CreateMap<sys_Employee, EmployeeModel>();
+
+                cfg.CreateMap<SuppliersModel, soft_Suppliers>();
+                cfg.CreateMap<soft_Suppliers, SuppliersModel>();
+
+
+                cfg.CreateMap<CustomPrincipal, Config_UserModel>();
+                cfg.CreateMap<soft_Customer, CustomerModel>();
+                cfg.CreateMap<CustomerModel, soft_Customer>();
+                
+
+
+            });
+
+
+
         }
 
     }

@@ -1,0 +1,116 @@
+﻿<script src="~/Scripts/module/CN/kho/Kho_order/mv.kho_order_child.js"></script>
+<script>
+    var IdOrderBag = "@ViewBag.Id";
+    var kho_Order_Child_@ViewBag.Id = new OrderChild.mvOrderChild(IdOrderBag);
+    $(document).ready(function () {
+        kho_Order_Child_@(ViewBag.Id).Start();
+    });
+</script>
+<div id="kho_Order_ChildViewId-@ViewBag.Id">
+    <fieldset class="fieldset">
+        <legend class="legend black-gradient">
+            Danh sách chi tiết đơn hàng
+        </legend>
+        <span class="button-group">
+            <a href="javascript:void(0)" class="button green-gradient glossy icon-download">Xuất</a>
+        </span>
+        <div class="table-responsive">
+            <table class="table table-bordered table-advance table-hover" id="DataTable_kho_Order_Child-@ViewBag.Id"
+                   data-bind="dataTable: {
+                              dataSource: kho_Order_Child_@(ViewBag.Id).listTableOrderChild,
+                              rowTemplate: 'readonlyTmp_kho_Order_Child-@ViewBag.Id',
+                              gridId: 'AssetGrid_kho_Order_Child-@ViewBag.Id',
+                              deferRender: true,
+                              columns:
+                                  [
+                                      {'name':'Id' },
+                                      {'name':'tensp' },
+                                      {'name':'masp' },
+                                      {'name':'tenNPP' },
+                                      {'name':'tendvt' },
+                                  ]
+                            }">
+                <thead>
+                    <tr>
+                        <th>Mã ĐH</th>
+                        <th>Tên SP</th>
+                        <th>Tên NPP</th>
+                        <th>Số lượng Tồn</th>
+                        <th>Số ngày bán</th>
+                        <th>Số lượng đặt</th>
+                        <th>Tổng tiền</th>
+                        <th>Ghi chú</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center"></tbody>
+            </table>
+        </div>
+
+    </fieldset>
+    <script type="text/html" id="readonlyTmp_kho_Order_Child-@ViewBag.Id">
+        <!--ko if: !IsEdit() -->
+        <!--ko template: { name: 'readTemplate_kho_Order_Child-@ViewBag.Id'} --> <!--/ko-->
+        <!--/ko-->
+        <!--ko if: IsEdit -->
+        <!--ko template: { name: 'editTemplate_kho_Order_Child-@ViewBag.Id'} --> <!--/ko-->
+        <!--/ko-->
+    </script>
+    <script type="text/html" id="editTemplate_kho_Order_Child-@ViewBag.Id">
+        <td>
+            <span data-bind="text: Id"></span>
+        </td>
+        <td>
+            <span data-bind="text: tensp"></span>
+        </td>
+        <td>
+            <span data-bind="text: tenNPP"></span>
+        </td>
+        <td>
+          
+        </td>
+        <td>
+            <span data-bind="text: slTBban"></span>
+        </td>
+        <td>
+            <span data-bind="text: slDat"></span>
+        </td>
+        <td></td>
+        <td>
+            <textarea data-bind="value: note" ></textarea>
+        </td>
+        <td>
+            <input type="button" class="button compact icon-gear" value="Lưu" data-bind="click: kho_Order_Child_@(ViewBag.Id).save" />
+        </td>
+    </script>
+    <script type="text/html" id="readTemplate_kho_Order_Child-@ViewBag.Id">
+        <td>
+            <span data-bind="text: Id"></span>
+        </td>
+        <td>
+            <span data-bind="text: tensp"></span>
+        </td>
+        <td>
+            <span data-bind="text: tenNPP"></span>
+        </td>
+        <td></td>
+        <td>
+            <span data-bind="text: slTBban"></span>
+        </td>
+        <td>
+            <span data-bind="text: slDat"></span>
+        </td>
+        <td></td>
+        <td>
+            <span data-bind="text: note"></span>
+        </td>
+        <td>
+            <input type="button" class="button compact icon-gear" data-bind="click: kho_Order_Child_@(ViewBag.Id).ChangeEdit, attr:{'value':!IsEdit()? 'Sửa' : 'Lưu' }" />
+            <input type="button" class="button compact icon-gear" value="Xóa" data-bind="click: kho_Order_Child_@(ViewBag.Id).delete" />
+        </td>
+
+    </script>
+    <div class="pageloading">
+        <span class="loader huge"></span>
+    </div>
+</div>

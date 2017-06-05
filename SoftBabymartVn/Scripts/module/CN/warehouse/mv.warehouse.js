@@ -33,7 +33,7 @@ Warehouse.mvWarehouse = function () {
             if (time.constructor != Date)
                 dateName = new Date(parseInt(time.substr(6)));
         };
-        Utils.addTabDynamic('Đơn hàng kho ' + val.Kho + '- ' + Utils.datelong(dateName), '/Warehouse/RenderViewDetail?id=' + val.Id, '#tabcontentCN')
+        Utils.addTabDynamic('Đơn hàng kho ' + val.Kho + '- ' + Utils.datelong(dateName), '/Warehouse/RenderViewDetail?id=' + val.Id, '#contentX')
     };
     //**************************************************************
     self.Start = function () {

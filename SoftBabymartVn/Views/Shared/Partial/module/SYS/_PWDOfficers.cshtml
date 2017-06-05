@@ -1,0 +1,45 @@
+﻿<script src="~/Scripts/module/SYS/Officers.PWD.js"></script>
+<script>
+    var pwd = new Officers.mvPWD();
+    $(document).ready(function () {
+        pwd.Start();
+    });
+</script>
+<div id="officerViewId">
+    <fieldset class="fieldset">
+        <legend class="legend black-gradient">
+            Thay đổi mật khẩu
+        </legend>
+        <div class="twelve-columns twelve-columns-tablet twelve-columns-mobile  margin-bottom">
+            <p class="inline-label">
+                <label class="label">Email</label>
+                <input type="text" class="input full-width" data-bind="value: mOfficers().Email" disabled>
+            </p>
+            <p class="inline-label">
+                <label class="label">Mật khẩu hiện tại</label>
+                <input type="text" class="input full-width" data-bind="value: mOfficers().PwdCurent">
+            </p>
+            <p class="inline-label">
+                <label class="label">Mật khẩu</label>
+                <input type="text" class="input full-width" data-bind="value: mOfficers().Pwd">
+            </p>
+            <p class="inline-label">
+                <label class="label">Mật khẩu lặp lại</label>
+                <input type="text" class="input full-width" data-bind="value: mOfficers().PwdRelace">
+            </p>
+            <div class="field-block button-height">
+
+                <button type="submit" class="button glossy mid-margin-right" data-bind="click: $parent.SaveChange">
+                    <span class="button-icon"><span class="icon-tick"></span></span>
+                    Thây đổi
+                </button>
+
+                <button type="submit" class="button glossy" data-bind="click: $parent.Cancel">
+                    <span class="button-icon red-gradient"><span class="icon-cross-round"></span></span>
+                    Hủy
+                </button>
+
+            </div>
+        </div>
+    </fieldset>
+</div>

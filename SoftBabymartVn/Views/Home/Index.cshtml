@@ -1,37 +1,31 @@
-﻿<div class="standard-tabs margin-bottom" id="add-tabs">
-    <ul class="tabs">
-        <li class="active"><a href="#tab-1">Danh mục</a></li>
-        <li><a href="#tab-2">Chức năng</a></li>
-        <li>Non-active</li>
-    </ul>
-    <div class="tabs-content">
-        <div id="tab-1" class="with-padding">
-            <div style="margin-bottom:10px">
-                <span class="button-group">
-                    <a href="javascript:void(0)" class="button icon-users" onclick="Utils.addTabDynamic('Nhóm khách hàng', '@Url.Content("~/GroupCustomer/RenderView")', '#tabcontentDM')">Nhóm khách hàng</a>
-                    <a href="javascript:void(0)" class="button icon-home" onclick="Utils.addTabDynamic('Kho hàng', '@Url.Content("~/KHO/RenderView")', '#tabcontentDM')">Kho hàng</a>
-                    <a href="javascript:void(0)" class="button icon-lightning" onclick="Utils.addTabDynamic('Đơn vị tính', '@Url.Content("~/Dvt/RenderView")', '#tabcontentDM')">Đơn vị tính</a>
-                    <a href="javascript:void(0)" class="button icon-bag" onclick="Utils.addTabDynamic('Nhóm hàng hóa', '@Url.Content("~/GroupProduct/RenderView")', '#tabcontentDM')">Nhóm hàng hóa</a>
-                    <a href="javascript:void(0)" class="button icon-plane" onclick="Utils.addTabDynamic('Nhà phân phối', '@Url.Content("~/NPP/RenderView")', '#tabcontentDM')">Nhà phân phối</a>
-                    <a href="javascript:void(0)" class="button icon-price-tag" onclick="Utils.addTabDynamic('Sản phẩm', '@Url.Content("~/Product/RenderView")', '#tabcontentDM')">Sản phẩm</a>
-                    <a href="javascript:void(0)" class="button icon-price-tag" onclick="Utils.addTabDynamic('Đơn giá hàng hóa', '@Url.Content("~/GroupCustomer_Product/RenderView")', '#tabcontentDM')">Đơn giá hàng hóa</a>
+﻿<div class="main-content">
+    <div class="breadcrumbs" id="breadcrumbs">
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home home-icon"></i>
+                <a href="#">Home</a>
+                <span class="divider">
+                    <i class="icon-angle-right arrow-icon"></i>
                 </span>
-            </div>
-            <div id="tabcontentDM" class="easyui-tabs" style="position:relative; width:100%;">
-                <div title="Home">
-                </div>
-            </div>
-        </div>
-        <div id="tab-2" class="with-padding">
-            <div style="margin-bottom:10px">
-                <span class="button-group">
-                    <a href="javascript:void(0)" class="button icon-users" onclick="Utils.addTabDynamic('Nhập Kho', '@Url.Content("~/KHO_Order/RenderView")','#tabcontentCN')">Đặt hàng</a>
-                </span>
-            </div>
-            <div id="tabcontentCN" class="easyui-tabs" style="position:relative; width:100%">
-                <div title="Home">
-                </div>
-            </div>
-        </div>
+            </li>
+            <li class="active">Dashboard</li>
+        </ul><!--.breadcrumb-->
+
+        <div class="nav-search" id="nav-search">
+            <form class="form-search" />
+            <span class="input-icon">
+                <input type="text" placeholder="Search ..." class="input-small nav-search-input" id="nav-search-input" autocomplete="off" />
+                <i class="icon-search nav-search-icon"></i>
+            </span>
+        </div><!--#nav-search-->
     </div>
-</div>
+    <div class="page-content">
+        <div id="contentX" class="easyui-tabs" style="position:relative; width:100%;">
+            <div title="Home">
+            </div>
+        </div>
+
+    </div><!--/.page-content-->
+    @Html.Partial("/Views/Shared/Partial/_chooseSkin.cshtml")
+    <!--/#ace-settings-container-->
+</div><!--/.main-content-->

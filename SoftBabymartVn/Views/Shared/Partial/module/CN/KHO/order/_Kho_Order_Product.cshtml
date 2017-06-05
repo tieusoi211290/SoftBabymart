@@ -1,0 +1,177 @@
+﻿
+<script src="~/Scripts/module/CN/kho/Kho_order_product/m.kho_order.js"></script>
+<script src="~/Scripts/module/CN/kho/Kho_order_product/mv.kho_order_product.js"></script>
+<script>
+    var kho_Order_Product = new KHO_Order_Product.mvKHO_Order_Product();
+    kho_Order_Product.Start();
+</script>
+<div id="kho_Order_ProductViewId">
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <fieldset class="fieldset">
+                <legend class="legend black-gradient">
+                    Tìm kiếm
+                </legend>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" placeholder="Nhập mã, tên sản phẩm" data-bind="value:txtStringQuery,valueUpdate: 'afterkeydown'" />
+                </div>
+                <div class="col-md-12">
+                    <!--ko foreach:listProductSearch-->
+                    <div class="panel panel-success">
+                        <a data-bind="text: tensp"></a>
+                    </div>
+                    <!--/ko-->
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-md-8">
+            <fieldset class="fieldset">
+                <legend class="legend black-gradient">
+                    Đặt hàng
+                </legend>
+                <div class="col-md-12 m-b10">
+                    <div class="col-md-4 m-t10 p-none">
+                        <label class="bold-light pull-right">Mặt hàng bán chỉ đủ trong </label>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="col-md-6 p-none p-l-none">
+                            <div class="inline_block m-r10">
+                                <div class="input-group input-small">
+                                    <input type="text" class="input" data-bind="value: txtDayRequest" />
+                                    <span class="input-group-addon">ngày</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 p-none p-l-none">
+                            <input value="Kiểm tra" class="button" data-bind="click: CreateOrder" />
+                        </div>
+                    </div>
+                </div>
+                <!--ko if:  mOrderProduct().soft_KHO_Order_Child().length > 0-->
+                <div class="col-md-12 m-b10">
+                    <div class="col-md-4 m-t10 p-none">
+                        <label class="bold-light pull-right">Số ngày cần đặt sản phẩm </label>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="col-md-6 p-none p-l-none">
+                            <div class="inline_block m-r10">
+                                <div class="input-group input-small">
+                                    <input type="text" class="input" data-bind="value: txtDayOrder,valueUpdate: 'afterkeydown'" />
+                                    <span class="input-group-addon">ngày</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="table table-bordered table-advance table-hover">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>MSP</th>
+                            <th>Tên sp</th>
+                            <th>Nhà PP</th>
+                            <th>Bán/ngày</th>
+                            <th>Sl Tồn</th>
+                            <th>Sl Đặt</th>
+                            <th>Đv</th>
+                            <th>Ghi chú</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--ko foreach: mOrderProduct().soft_KHO_Order_Child-->
+                        <tr>
+                            <td data-bind="text:($index() + 1)"></td>
+                            <td data-bind="text: masp"></td>
+                            <td data-bind="text: tensp"></td>
+                            <td data-bind="text: NPP().TenNPP"></td>
+                            <td data-bind="text: slTBban"></td>
+                            <td data-bind="text: soft_soluongton"></td>
+                            <td data-bind="text: slDat"></td>
+                            <td data-bind="text: tendvt"></td>
+                            <td>
+                                <textarea data-bind="value: ghichu"></textarea>
+                            </td>
+                        </tr>
+                        <!--/ko-->
+                    </tbody>
+                </table>
+                <div class="col-md-12 text-center">
+                    <input value="Lưu đơn hàng" class="button" data-bind="click: OrderProduct" />
+                    <input value="In đơn đặt hàng" class="button" data-bind="click: PrintOrder" />
+                </div>
+                <!--/ko-->
+            </fieldset>
+        </div>
+    </div>
+    <!--ko if: IsPrintOrdering -->
+    <h3 class="thin">Phiếu đặt hàng</h3>
+    <!--ko foreach:listPrintOrder -->
+    <div class="twelve-columns twelve-columns-mobile">
+        <details class="details margin-bottom">
+            <summary role="button" aria-expanded="false" data-bind="text: 'NPP - ' +  product[0].NPP().TenNPP()"></summary>
+            <div class="with-padding">
+                <div data-bind="attr:{'id':'printorder_' + group}">
+                    <div class="margin-bottom">
+                        <ul>
+                            <li>Công ty TNHH MTV Thương mại & Dịch vụ Babymart</li>
+                            <li>3/19 Phan Văn Sửu – P. 13 – Q. Tân Bình</li>
+                            <li>ĐT: 6672.0909 – 3812.3813 – Email: www.babymart.vn@gmail.com</li>
+                            <li>Người đặt hàng:</li>
+                            <li>SĐT</li>
+                        </ul>
+                        <h3 class="text-center margin-none">PHIẾU ĐẶT HÀNG</h3>
+                        <p class="text-center">Ngày....tháng...năm....</p>
+
+                    </div>
+                    <ul class="six-columns m-auto">
+
+                        <li>Gửi đến SPL: <span data-bind="text: product[0].NPP().TenNPP()"></span></li>
+                        <li>Địa chỉ: <span data-bind="text: product[0].NPP().Diachi()"></span></li>
+
+                        <li>SĐT: <span data-bind="text: product[0].NPP().Dienthoai()"></span></li>
+                        <li>Người nhận đơn hàng: <span></span></li>
+                        <li>Email: <span data-bind="text: product[0].NPP().Email()"></span><span></span></li>
+                    </ul>
+                    <table class="table table-bordered table-advance table-hover">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>MSP</th>
+                                <th>Tên sp</th>
+                                <th>Nhà PP</th>
+                                <th>Bán/ngày</th>
+                                <th>Sl Tồn</th>
+                                <th>Sl Đặt</th>
+                                <th>Đv</th>
+                                <th>Ghi chú</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--ko foreach: $data.product-->
+                            <tr>
+                                <td data-bind="text:($index() + 1)"></td>
+                                <td data-bind="text: masp"></td>
+                                <td data-bind="text: tensp"></td>
+                                <td data-bind="text: tenNPP"></td>
+                                <td data-bind="text: slTBban"></td>
+                                <td data-bind="text: soft_soluongton"></td>
+                                <td data-bind="text: slDat"></td>
+                                <td data-bind="text: tendvt"></td>
+                                <td data-bind="text: ghichu"></td>
+                            </tr>
+                            <!--/ko-->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center m-auto">
+                    <input type="button" class="button green-gradient icon icon-printer cursor-pointer" value="In" data-bind="click: $parents[0].Print">        
+                  </div>
+            </div>
+
+        </details>
+
+    </div>
+    <!--/ko-->
+    <!--/ko-->
+</div>

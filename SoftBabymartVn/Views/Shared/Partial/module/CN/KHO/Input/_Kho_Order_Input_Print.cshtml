@@ -1,0 +1,59 @@
+﻿<script type="text/html" id="readonlyTemplate_kho_Order_Input_Print">
+    <div class="twelve-columns twelve-columns-mobile">
+        <details class="details margin-bottom">
+            <summary role="button" aria-expanded="false" data-bind="text: 'NPP - ' +  product[0].NPP().TenNPP()"></summary>
+            <div class="with-padding">
+                <div  data-bind="attr:{'id':'printorder_' + group}">
+                    <div class="margin-bottom">
+                        <ul>
+                            <li>Công ty TNHH MTV Thương mại & Dịch vụ Babymart</li>
+                            <li>3/19 Phan Văn Sửu – P. 13 – Q. Tân Bình</li>
+                            <li>ĐT: 6672.0909 – 3812.3813 – Email: www.babymart.vn@gmail.com</li>
+                        </ul>
+                        <h3 class="text-center margin-none">PHIẾU NHẬP HÀNG</h3>
+                        <p class="text-center">Ngày....tháng...năm....</p>
+
+                    </div>
+                    <table class="table table-bordered table-advance table-hover">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã vạch</th>
+                                <th>Mã số</th>
+                                <th>Tên hàng</th>
+                                <th>Đv</th>
+                                <th>NPP</th>
+                                <th>Số lượng nhập</th>
+                                <th>Giá nhập</th>
+                                <th>Thành tiền</th>
+                                <th>Ghi chú</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--ko foreach: $data.product-->
+                            <tr>
+                                <td data-bind="text:($index() + 1)"></td>
+                                <td data-bind="text: Barcode"></td>
+                                <td data-bind="text: masp"></td>
+                                <td data-bind="text: tensp"></td>
+                                <td data-bind="text: tendvt"></td>
+                                <td data-bind="text: NPP().TenNPP"></td>
+                                <td data-bind="text: Total_Input"></td>
+                                <td data-bind="text: Total_Money"></td>
+                                <td data-bind="text: Total"></td>
+                                <td data-bind="text: Note"></td>
+
+                            </tr>
+                            <!--/ko-->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center m-auto">
+                    <input type="button" class="button green-gradient icon icon-printer cursor-pointer" value="In" data-bind="click: $parents[1].Print">
+                </div>
+            </div>
+         
+        </details>
+        
+    </div>
+</script>

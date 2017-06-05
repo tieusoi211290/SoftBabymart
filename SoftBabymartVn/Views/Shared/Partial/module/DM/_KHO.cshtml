@@ -74,7 +74,8 @@
         <td class="low-padding align-center">
             <input type="button" class="button compact icon-gear" value="Save" data-bind="click: function () { kho.viewmodel().save($data); }" />
             <input type="button" class="button compact icon-gear" value="Cancel" data-bind="click: function () {  kho.viewmodel().reset(); }" />
-        </td>
+            <input type="button" class="btn btn-info" value="Xem" data-bind="click: function () { kho.viewmodel().review($data); }" />
+            </td>
     </script>
     <script type="text/html" id="readTemplate_kho">
         <td>
@@ -92,7 +93,9 @@
         <td>
             <input type="button" class="button compact icon-gear" value="Edit" data-bind="click: function () { kho.viewmodel().editTemplate($data);}" />
             <input type="button" class="button compact icon-gear" value="delete" data-bind="click: function () { kho.viewmodel().delete($data); }" />
-        </td>
+            <input type="button" class="btn btn-info" value="Xem" data-bind="click: function () { kho.viewmodel().review($data); }" />
+
+          </td>
     </script>
 
     <div class="pageloading">

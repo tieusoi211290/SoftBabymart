@@ -1,0 +1,35 @@
+﻿<script type="text/html" id="readonlyTemplate_kho_Order_Input_Story">
+    <fieldset class="fieldset">
+        <legend class="legend black-gradient">
+            Lưu trữ Nhập hàng
+        </legend>
+        <div class="table-responsive">
+            <table class="table table-bordered table-advance table-hover">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tổng tiền</th>
+                        <th>Ngày tạo</th>
+                        <th>Ghi chú</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--ko foreach: mKHO_Input_lst -->
+                    <tr>
+                        <td data-bind="text: ViewId"></td>
+                        <td data-bind="text: Total"></td>
+                        <td data-bind="dateshort: DateUpdate"></td>
+                        <td data-bind="text: Note"></td>
+                        <td>
+                            <input class="button blue-gradient" value="Xem" data-bind="click:  $parent.redirectToDetail">
+                        </td>
+                    </tr>
+                    <!--/ko-->
+                </tbody>
+            </table>
+        </div>
+
+    </fieldset>
+
+</script>

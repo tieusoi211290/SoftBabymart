@@ -1,0 +1,65 @@
+﻿<script src="~/Scripts/lib/plugin/custom_common/filter_common.js"></script>
+<script src="~/Scripts/module/DM/KHO_Product.js"></script>
+@Html.Partial("~/Views/Shared/Partial/module/Partial/_filterTool.cshtml")
+<script>
+    var kho_product_@(ViewBag.IdKho) = new KHO.mvKHO_Product(@ViewBag.IdKho);
+    $(document).ready(function () {
+        kho_product_@(ViewBag.IdKho).Start();
+    });
+</script>
+<div id="kho_productViewId_@(ViewBag.IdKho)">
+    <fieldset class="fieldset">
+        <legend class="legend" data-bind="text:'KHO - '+khoDetail().Kho()"></legend>
+        <div class="boxed">
+            <ul class="bullet-list">
+                <li>Mã kho: <b data-bind="text: khoDetail().Id()"></b></li>
+                <li>Tên Kho: <b data-bind="text: khoDetail().Kho()"></b></li>
+                <li>Địa chỉ: <b data-bind="text: khoDetail().Diachi()"></b></li>
+                <li>Liên hệ: <b data-bind="text: khoDetail().Lienhe()"></b></li>
+            </ul>
+        </div>
+    </fieldset>
+    <!--ko template: { name: 'filtertool', data: kho_product_@(ViewBag.IdKho).tmptool()} --><!--/ko-->
+    <!-- ko if: kho_product_@(ViewBag.IdKho).lstKhoProduct().length>0-->
+    <div class="table-responsive div_dataTable_kho_product_@(ViewBag.IdKho)">
+        <table class="table table-bordered table-advance table-hover" id="DataTable_kho_product_@ViewBag.IdKho"
+               data-bind="dataTable: {
+                              dataSource: kho_product_@(ViewBag.IdKho).lstKhoProduct,
+                              rowTemplate: 'Tmp_kho_product_@(ViewBag.IdKho)',
+                              gridId: 'AssetGrid_kho_product_@(ViewBag.IdKho)',
+                              deferRender: true,
+                              columns:
+                                  [
+                                      {'name':'barcode' },
+                                      {'name':'masp' },
+                                      {'name':'tensp' },
+                                      {'name':'SL' }
+                                  ]
+                            }">
+            <thead>
+                <tr>
+                    <th>Barcode</th>
+                    <th>Mã sp</th>
+                    <th>Sp</th>
+                    <th>Số lượng</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <!--/ko-->
+    <script type="text/html" id="Tmp_kho_product_@(ViewBag.IdKho)">
+        <td>
+            <span data-bind="text: barcode"></span>
+        </td>
+        <td>
+            <span data-bind="text: masp"></span>
+        </td>
+        <td>
+            <span data-bind="text: tensp"></span>
+        </td>
+        <td>
+            <span data-bind="text: SL"></span>
+        </td>
+    </script>
+</div>

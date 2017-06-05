@@ -1,0 +1,90 @@
+﻿<script type="text/html"  id="readonlyTemplate_kho_Order_Input_Get">
+    <fieldset class="fieldset">
+        <legend class="legend black-gradient">
+            Nhập hàng
+        </legend>
+        <div class="table-responsive">
+            <table class="table table-bordered table-advance table-hover">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Mã vạch</th>
+                        <th>Mã số</th>
+                        <th>Tên hàng</th>
+                        <th>Đv</th>
+                        <th>NPP</th>
+                        <th>Số lượng nhập</th>
+                        <th>Giá nhập</th>
+                        <th>Thành tiền</th>
+                        <th>Ghi chú</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--ko foreach: mKHO_Input().soft_KHO_Order_Input_Child-->
+                    <tr>
+                        <td data-bind="text:($index() + 1)"></td>
+                        <td data-bind="text: Barcode"></td>
+                        <td data-bind="text: masp"></td>
+                        <td data-bind="text: tensp"></td>
+                        <td data-bind="text: tendvt"></td>
+                        <td data-bind="text: NPP().TenNPP"></td>
+                        <td>
+                            <input data-bind="value: Total_Input" type="text" class="input input-xsmall" />
+                        </td>
+                        <td>
+                            <input data-bind="value: Total_Money" type="text" class="input input-xsmall" />
+                        </td>
+                        <td data-bind="text: Total"></td>
+                        <td>
+                            <textarea data-bind="value: Note"></textarea>
+                        </td>
+                        <td>
+                            <span class="button-group">
+                                <a href="javascript:void(0)" data-bind="click: kho_Order_input.Remove" class="button red-gradient  glossy icon-trash"></a>
+                            </span>
+                        </td>
+                    </tr>
+                    <!--/ko-->
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input data-bind="value: Barcode,valueUpdate: 'afterkeydown'" type="text" class="input small" />
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <input type="text" class="input input-xsmall" />
+                        </td>
+                        <td>
+                            <input type="text" class="input input-xsmall" />
+                        </td>
+                        <td></td>
+                        <td>
+                            <textarea></textarea>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="9" class="text-right">
+        Tổng:
+                        </td>
+                        <td colspan="2" class="text-left" data-bind="text: Total"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="11">
+                            <b> Ghi chú:</b> <textarea data-bind="value: mKHO_Input().Note" class="width-auto"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="col-md-12 text-center">
+                <input value="Lưu nhập hàng" class="button blue-gradient" data-bind="click: SaveOrderInput" />
+                <input type="checkbox" data-bind="checked: IsPrintOrdering" class="button green-gradient glossy icon-printer cursor-pointer">
+             </div>
+        </div>
+
+    </fieldset>
+</script>
